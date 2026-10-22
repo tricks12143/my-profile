@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Irvin Udang | Senior Full-Stack &amp; SaaS Developer</title>
+  <meta name="description" content="Portfolio of John Irvin C. Udang - Senior Full-stack &amp; SaaS developer with 9+ years of engineering experience across React, Next.js, TypeScript, Node.js, Cloud, and AI." />
+  <meta name="keywords" content="John Irvin Udang, Full-Stack Developer, SaaS Developer, React, Next.js, TypeScript, Node.js, Gemini AI, Azure, Portfolio" />
+  <meta name="author" content="John Irvin C. Udang" />
+  <link rel="icon" href="public/favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            neutral: {
+              950: '#0a0a0a',
+              900: '#121212',
+              850: '#171717',
+              800: '#202020',
+              700: '#2e2e2e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Sleek custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #404040;
+    }
+    ::selection {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    /* Glow animations */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.08); }
+    }
+    .animate-glow {
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans min-h-screen flex flex-col selection:bg-white selection:text-black antialiased relative">
+
+  <!-- BACKGROUND AMBIENT GLOW -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.025] rounded-full blur-[140px] animate-glow"></div>
+    <div class="absolute top-[40%] -right-40 w-[500px] h-[500px] bg-emerald-500/[0.02] rounded-full blur-[160px] animate-glow" style="animation-delay: -3s;"></div>
+    <div class="absolute bottom-10 -left-40 w-[500px] h-[500px] bg-sky-500/[0.02] rounded-full blur-[160px] animate-glow" style="animation-delay: -5s;"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 w-full border-b border-white/10 bg-neutral-950/80 backdrop-blur-xl transition-all">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
+      <!-- Logo -->
+      <a href="#hero" class="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]">
+        <div class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white text-black font-mono font-bold text-lg shadow-sm group-hover:bg-neutral-200 transition-colors">
+          JI
+          <span class="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+          </span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-semibold tracking-tight text-white group-hover:text-neutral-200 transition-colors">
+            John Irvin Udang
+          </span>
+          <span class="text-xs text-neutral-400 font-mono tracking-wider">
+            Full-Stack Developer
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="#hero" class="nav-link px-4 py-2 text-sm font-medium text-white bg-white/10 rounded-lg shadow-inner transition-all">Home</a>
+        <a href="#skills" class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Skills</a>
+        <a href="#work" class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Sample Work</a>
+        <a href="#contact" class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Contact</a>
+        
+        <!-- Ask AI Button -->
+        <button onclick="toggleChat(true)" class="ml-2 inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/50">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+          </svg>
+          Ask AI
+        </button>
+      </nav>
+
+      <!-- Mobile Nav Buttons -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button onclick="toggleChat(true)" class="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-300">
+          Ask AI
+        </button>
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="rounded-lg p-2 text-neutral-400 hover:bg-white/10 hover:text-white focus:outline-none">
+          <svg id="menuIconClosed" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menuIconOpen" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden border-b border-white/10 bg-neutral-950/95 px-6 py-4 md:hidden">
+      <nav class="flex flex-col gap-2">
+        <a href="#hero" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-white hover:bg-white/10">Home</a>
+        <a href="#skills" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Skills</a>
+        <a href="#work" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Sample Work</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Contact</a>
+        <button onclick="toggleMobileMenu(); toggleChat(true);" class="mt-2 flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-300">
+          Ask John's Gemini AI
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 flex flex-col gap-24 pb-24">
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden pt-12 sm:pt-20">
+      <div class="mx-auto max-w-6xl px-6 sm:px-8">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+          <!-- Text & CTAs -->
+          <div class="lg:col-span-7">
+            <!-- Availability Badge -->
+            <div class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-neutral-300 backdrop-blur-sm">
+              <span class="relative flex h-2 w-2">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+              </span>
+              <span class="font-mono text-neutral-200">
+                Open for Full-Stack &amp; Frontend Opportunities
+              </span>
+            </div>
+
+            <h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              John Irvin C. Udang
+            </h1>
+
+            <p class="mt-3 text-lg font-medium text-neutral-300 sm:text-xl font-mono">
+              Senior Full-Stack &amp; SaaS Developer
+            </p>
+
+            <p class="mt-5 max-w-2xl text-base text-neutral-400 leading-relaxed sm:text-lg">
+              Building scalable SaaS platforms, high-performance web applications, and interactive digital experiences with over 9+ years of engineering across modern front-end, back-end, cloud, and AI ecosystems.
+            </p>
+
+            <!-- Philosophy Badge -->
+            <div class="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-2 text-xs text-neutral-300">
+              <span class="flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>
+                <strong class="text-emerald-400 font-medium">Philosophy:</strong> I utilize Gemini AI for speedy development while monitoring the readability of the code.
+              </span>
+            </div>
+
+            <!-- Call to Actions -->
+            <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+              <a href="#work" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 sm:px-6 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-neutral-200 hover:shadow-lg active:scale-95">
+                Explore Sample Work
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+
+              <button type="button" onclick="toggleChat(true)" class="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 sm:px-6 py-3.5 text-sm font-semibold text-emerald-300 transition-all duration-200 hover:bg-emerald-500/20 hover:border-emerald-500/60 active:scale-95">
+                <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                </svg>
+                Ask Gemini AI
+              </button>
+
+              <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 sm:px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/10 active:scale-95">
+                Get In Touch
+              </a>
+            </div>
+
+            <!-- Quick Badges -->
+            <div class="mt-8 flex flex-wrap items-center gap-6 text-xs text-neutral-400 font-mono">
+              <div class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Bacolod City, Philippines</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:johnirvinudang@gmail.com" class="hover:text-white transition-colors">johnirvinudang@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Picture Card -->
+          <div class="flex justify-center lg:col-span-5 lg:justify-end">
+            <div class="relative group">
+              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-b from-white/20 via-white/5 to-transparent opacity-75 blur-sm transition-all duration-300 group-hover:opacity-100"></div>
+              <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-neutral-900 p-2 shadow-2xl">
+                <div class="relative h-80 w-72 sm:h-96 sm:w-80 overflow-hidden rounded-2xl bg-neutral-950 flex items-center justify-center">
+                  <!-- Fallback avatar / image -->
+                  <img src="profile.png" onerror="this.onerror=null; this.src='public/profile.png';" alt="John Irvin C. Udang" class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
+                    <p class="font-mono text-xs uppercase tracking-wider text-neutral-400">
+                      Senior Developer
+                    </p>
+                    <p class="text-sm font-semibold text-white">
+                      John Irvin C. Udang
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics / Stats Bar -->
+        <div class="mt-16 grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-neutral-900/40 p-6 backdrop-blur-sm sm:grid-cols-4">
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">9+</span>
+            <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Years of Experience</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">25+</span>
+            <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Core Technologies</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">50+</span>
+            <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Projects Delivered</span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">100%</span>
+            <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Client &amp; Team Focus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE SKILLS SHOWCASE -->
+    <section id="skills" class="mx-auto w-full max-w-6xl px-6 sm:px-8 scroll-mt-24">
+      <div class="flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">
+            Technical Expertise
+          </span>
+          <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            Skills Acquired Throughout the Years
+          </h2>
+          <p class="mt-2 text-sm text-neutral-400">
+            A comprehensive inventory of engineering capabilities, tools, and technical competencies.
+          </p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="w-full md:w-64">
+          <div class="relative">
+            <input id="skillSearchInput" type="text" placeholder="Search skill (e.g. Next.js, Azure)..." oninput="handleSkillFilter()" class="w-full rounded-xl border border-white/15 bg-neutral-900/80 px-3.5 py-2 pl-9 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" />
+            <svg class="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div id="skillCategoryPills" class="mt-6 flex flex-wrap gap-2">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Skills Grid -->
+      <div id="skillsGrid" class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- CORE ENGINEERING HIGHLIGHTS / PHILOSOPHY -->
+    <section class="mx-auto w-full max-w-6xl px-6 sm:px-8">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-neutral-900/80 to-neutral-950 p-8 sm:p-12">
+        <div class="max-w-2xl">
+          <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">
+            Engineering Mindset
+          </span>
+          <h2 class="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            Principles Behind the Code
+          </h2>
+          <p class="mt-3 text-sm text-neutral-400 leading-relaxed">
+            Every system is engineered with an emphasis on clarity, scalability, and seamless user interaction.
+          </p>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white font-mono">
+              01
+            </div>
+            <h4 class="mt-4 font-semibold text-white">Clean Architecture</h4>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              Building modular, self-contained components and services with strict typing and maintainability.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white font-mono">
+              02
+            </div>
+            <h4 class="mt-4 font-semibold text-white">High Performance</h4>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              Query caching, code splitting, lazy asset loading, and minimal bundle sizes for fast interactions.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white font-mono">
+              03
+            </div>
+            <h4 class="mt-4 font-semibold text-white">AI-Driven Workflows</h4>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              I utilize Gemini AI for speedy development while monitoring the readability of the code and adhering to clean architecture.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white font-mono">
+              04
+            </div>
+            <h4 class="mt-4 font-semibold text-white">Agile &amp; Collaborative</h4>
+            <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
+              Thrives in fast-paced environments, partnering with cross-functional teams and mentoring teammates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE WORK & ENGINEERED SYSTEMS -->
+    <section id="work" class="mx-auto w-full max-w-6xl px-6 sm:px-8 scroll-mt-24">
+      <div class="border-b border-white/10 pb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-400">
+          Portfolio &amp; Solutions
+        </span>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          Sample Work &amp; Engineered Systems
+        </h2>
+        <p class="mt-4 max-w-2xl text-base text-neutral-400 leading-relaxed">
+          A showcase of web applications, enterprise tooling, mobile solutions, and interactive platforms developed over the years. Focused purely on system architecture, technical implementations, and engineering results.
+        </p>
+
+        <!-- Filter & Search Bar -->
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div id="projectCategoryTabs" class="flex flex-wrap gap-2">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Project Search -->
+          <div class="w-full sm:w-64">
+            <div class="relative">
+              <input id="projectSearchInput" type="text" placeholder="Filter by tech or title..." oninput="handleProjectFilter()" class="w-full rounded-xl border border-white/15 bg-neutral-900/80 px-3.5 py-2 pl-9 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" />
+              <svg class="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects List -->
+      <div id="projectsList" class="mt-12 space-y-10">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ACADEMIC BACKGROUND -->
+    <section class="mx-auto w-full max-w-6xl px-6 sm:px-8">
+      <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-8 sm:p-10">
+        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">
+              Academic Background
+            </span>
+            <h3 class="mt-1 text-xl font-bold text-white">
+              Bachelor of Science in Information Technology (BSIT)
+            </h3>
+            <p class="mt-1 text-sm text-neutral-400">
+              STI Davao &bull; 2012 – 2016
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <a href="#work" class="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-semibold text-white hover:border-white/50 hover:bg-white/10 transition-colors">
+              View Applied Projects
+              <span class="font-mono">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="mx-auto w-full max-w-6xl px-6 sm:px-8 scroll-mt-24">
+      <div class="border-b border-white/10 pb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-neutral-400">
+          Reach Out
+        </span>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          Get in Touch
+        </h2>
+        <p class="mt-4 max-w-2xl text-base text-neutral-400 leading-relaxed">
+          Have an upcoming project, architecture challenge, or full-stack engineering requirement? Let's start a conversation.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <!-- Left: Direct Info Cards & Links -->
+        <div class="space-y-6 lg:col-span-5">
+          <!-- Availability Card -->
+          <div class="rounded-2xl border border-white/10 bg-neutral-900/60 p-6">
+            <div class="flex items-center gap-3">
+              <span class="relative flex h-3 w-3">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+              </span>
+              <h3 class="font-semibold text-white">Current Availability</h3>
+            </div>
+            <p class="mt-3 text-xs text-neutral-300 leading-relaxed">
+              Open to full-stack software engineering, SaaS application development, senior frontend architecture, Next.js / React projects, and technical consulting.
+            </p>
+            <div class="mt-4 border-t border-white/5 pt-3 font-mono text-xs text-neutral-400">
+              Response time: <span class="text-white">Within 24 hours</span>
+            </div>
+          </div>
+
+          <!-- Email Card with 1-click copy -->
+          <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+            <span class="font-mono text-xs uppercase tracking-wider text-neutral-400">
+              Email Address
+            </span>
+            <div class="mt-2 flex items-center justify-between gap-2">
+              <a href="mailto:johnirvinudang@gmail.com" class="text-base font-semibold text-white hover:underline truncate">
+                johnirvinudang@gmail.com
+              </a>
+              <button id="copyEmailBtn" onclick="copyText('johnirvinudang@gmail.com', 'copyEmailBtn')" class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-neutral-300 hover:border-white/30 hover:text-white transition-colors" title="Copy to clipboard">
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- Phone Card with 1-click copy -->
+          <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+            <span class="font-mono text-xs uppercase tracking-wider text-neutral-400">
+              Direct Phone / WhatsApp
+            </span>
+            <div class="mt-2 flex items-center justify-between gap-2">
+              <a href="tel:+639150665312" class="text-base font-semibold text-white hover:underline font-mono">
+                +63 915 066 5312
+              </a>
+              <button id="copyPhoneBtn" onclick="copyText('+63 915 066 5312', 'copyPhoneBtn')" class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-neutral-300 hover:border-white/30 hover:text-white transition-colors" title="Copy to clipboard">
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- Location & Timezone -->
+          <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+            <span class="font-mono text-xs uppercase tracking-wider text-neutral-400">
+              Location &amp; Timezone
+            </span>
+            <p class="mt-2 text-base font-semibold text-white">
+              Bacolod City, Philippines
+            </p>
+            <p class="mt-1 text-xs text-neutral-400 font-mono">
+              Philippine Standard Time (GMT+8) &bull; Experienced with asynchronous remote collaboration.
+            </p>
+          </div>
+
+          <!-- Online Profiles -->
+          <div class="rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+            <span class="font-mono text-xs uppercase tracking-wider text-neutral-400">
+              Online Profiles
+            </span>
+            <div class="mt-4 flex flex-col gap-2.5">
+              <a href="https://github.com/tricks12143?tab=repositories" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
+                <span class="flex items-center gap-2">
+                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                  GitHub Repositories
+                </span>
+                <span class="text-neutral-400 font-mono text-[11px]">&nearr;</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/john-irvin-udang-3b1482109/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
+                <span class="flex items-center gap-2">
+                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  LinkedIn Profile
+                </span>
+                <span class="text-neutral-400 font-mono text-[11px]">&nearr;</span>
+              </a>
+
+              <a href="https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
+                <span class="flex items-center gap-2">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  JobStreet Profile
+                </span>
+                <span class="text-neutral-400 font-mono text-[11px]">&nearr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl border border-white/10 bg-neutral-900/50 p-6 sm:p-10">
+            <h2 class="text-2xl font-bold tracking-tight text-white">
+              Send a Direct Message
+            </h2>
+            <p class="mt-2 text-xs sm:text-sm text-neutral-400">
+              Fill out the form below and I'll get back to you shortly.
+            </p>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="mt-8 space-y-5">
+              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label class="block font-mono text-xs text-neutral-400">
+                    Your Name <span class="text-white">*</span>
+                  </label>
+                  <input type="text" id="formName" required placeholder="Jane Doe" class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+                </div>
+
+                <div>
+                  <label class="block font-mono text-xs text-neutral-400">
+                    Email Address <span class="text-white">*</span>
+                  </label>
+                  <input type="email" id="formEmail" required placeholder="jane@example.com" class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-mono text-xs text-neutral-400">
+                  Subject <span class="text-white">*</span>
+                </label>
+                <input type="text" id="formSubject" required placeholder="Project Inquiry / Job Opportunity" class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+              </div>
+
+              <div>
+                <label class="block font-mono text-xs text-neutral-400">
+                  Your Message <span class="text-white">*</span>
+                </label>
+                <textarea id="formMessage" rows="5" required placeholder="Describe your project, timeline, or engineering needs..." class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn" class="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-neutral-200 active:scale-98">
+                <span>Send Message</span>
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </form>
+
+            <div id="formSuccess" class="hidden mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-center">
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 class="mt-4 text-base font-semibold text-white">Message Received!</h3>
+              <p class="mt-2 text-xs text-neutral-300">
+                Thank you for reaching out. Your message has been logged and I will review and reply via email at the earliest opportunity.
+              </p>
+              <button onclick="resetContactForm()" class="mt-6 rounded-lg bg-white px-4 py-2 text-xs font-semibold text-black hover:bg-neutral-200 transition-colors">
+                Send Another Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="mx-auto w-full max-w-6xl px-6 sm:px-8">
+      <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-neutral-900 px-8 py-12 text-center sm:px-16 sm:py-16">
+        <div class="relative z-10 mx-auto max-w-xl">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Ready to collaborate?
+          </h2>
+          <p class="mt-3 text-sm text-neutral-400 leading-relaxed sm:text-base">
+            Whether you need full-stack development, frontend architecture, Next.js / React expertise, or AI integration, let's discuss your technical goals.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-3 text-sm font-semibold text-black hover:bg-neutral-200 active:scale-95 transition-all">
+              Contact Me
+            </a>
+            <a href="mailto:johnirvinudang@gmail.com" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all">
+              Send Direct Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-white/10 bg-neutral-950 py-12 text-neutral-400">
+    <div class="mx-auto max-w-6xl px-6 sm:px-8">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <!-- Brand info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2">
+            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-white text-black font-mono font-bold text-xs">
+              JI
+            </span>
+            <span class="font-semibold text-white">John Irvin C. Udang</span>
+          </div>
+          <p class="mt-3 max-w-sm text-sm text-neutral-400 leading-relaxed">
+            Full-stack developer focused on building robust, scalable web architectures, modern reactive frontends, and AI-powered interfaces.
+          </p>
+          <div class="mt-4 flex items-center gap-2 text-xs text-neutral-500 font-mono">
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+            <span>Based in Bacolod City, Philippines &bull; Available globally</span>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white">
+            Navigation
+          </h4>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#hero" class="hover:text-white transition-colors">Home &amp; Hero</a></li>
+            <li><a href="#skills" class="hover:text-white transition-colors">Core Skills</a></li>
+            <li><a href="#work" class="hover:text-white transition-colors">Sample Work</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white">
+            Connect
+          </h4>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li>
+              <a href="https://github.com/tricks12143?tab=repositories" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                GitHub <span class="text-xs text-neutral-500">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/john-irvin-udang-3b1482109/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                LinkedIn <span class="text-xs text-neutral-500">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                JobStreet <span class="text-xs text-neutral-500">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:johnirvinudang@gmail.com" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                Email Me <span class="text-xs text-neutral-500">&nearr;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row text-xs text-neutral-500">
+        <p>&copy; 2026 John Irvin Udang. All rights reserved.</p>
+        <p class="font-mono">Engineered as Single-File Self-Contained Web App</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING GEMINI AI CHAT BUTTON -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <button id="floatingChatBtn" onclick="toggleChat()" class="group relative flex h-14 w-14 items-center justify-center rounded-2xl border border-emerald-500/40 bg-neutral-900/90 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-emerald-400 hover:bg-neutral-850 active:scale-95">
+      <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 to-teal-500/30 opacity-70 blur-md group-hover:opacity-100 transition-opacity"></div>
+      <div class="relative flex items-center justify-center text-emerald-400">
+        <svg class="h-7 w-7 transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+        </svg>
+      </div>
+      <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex h-3.5 w-3.5 rounded-full bg-emerald-500 border-2 border-neutral-950"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- GEMINI CHAT DRAWER / MODAL -->
+  <div id="chatDrawerBackdrop" onclick="toggleChat(false)" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+  
+  <div id="chatDrawer" class="hidden fixed bottom-0 right-0 z-50 w-full sm:bottom-6 sm:right-6 sm:w-[440px] sm:max-h-[640px] h-[92vh] sm:h-[620px] rounded-t-3xl sm:rounded-3xl border border-white/15 bg-neutral-950/95 shadow-2xl backdrop-blur-2xl flex flex-col overflow-hidden transition-all duration-300 transform translate-y-full sm:translate-y-4 opacity-0">
+    <!-- Chat Header -->
+    <div class="flex items-center justify-between border-b border-white/10 bg-neutral-900/60 px-5 py-4">
+      <div class="flex items-center gap-3">
+        <div class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+          </svg>
+          <span class="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-neutral-900"></span>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+            Gemini AI Assistant
+            <span class="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-mono text-emerald-300">Live</span>
+          </h3>
+          <p class="text-[11px] font-mono text-neutral-400">
+            Portfolio Q&amp;A &bull; Offline &amp; Online Ready
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5">
+        <button onclick="toggleChatSettings()" class="rounded-lg p-1.5 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors" title="API Settings">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </button>
+        <button onclick="toggleChat(false)" class="rounded-lg p-1.5 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors" title="Close Chat">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Optional API Key Settings Panel -->
+    <div id="chatSettingsPanel" class="hidden border-b border-white/10 bg-neutral-900 p-4 text-xs">
+      <div class="flex items-center justify-between font-semibold text-white">
+        <span>Custom Google Gemini API Key</span>
+        <button onclick="toggleChatSettings()" class="text-neutral-400 hover:text-white">&times;</button>
+      </div>
+      <p class="mt-1 text-neutral-400">
+        Optional. If provided, chats connect directly to Google's Gemini 2.5/1.5 API. Leave blank to use the built-in intelligent offline knowledge base!
+      </p>
+      <div class="mt-2.5 flex gap-2">
+        <input type="password" id="customApiKeyInput" placeholder="AIzaSy..." class="flex-1 rounded-lg border border-white/15 bg-neutral-950 px-3 py-1.5 font-mono text-xs text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+        <button onclick="saveApiKey()" class="rounded-lg bg-emerald-500 px-3 py-1.5 font-medium text-black hover:bg-emerald-400 transition-colors">
+          Save
+        </button>
+      </div>
+      <div id="apiKeyNotification" class="hidden mt-2 text-emerald-400 font-mono">
+        &check; API Key saved to localStorage!
+      </div>
+    </div>
+
+    <!-- Chat Messages Container -->
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 text-xs sm:text-sm">
+      <!-- Initial Welcome Message -->
+      <div class="flex items-start gap-3">
+        <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold">
+          AI
+        </div>
+        <div class="rounded-2xl rounded-tl-sm border border-white/10 bg-neutral-900/90 p-3.5 text-neutral-200 leading-relaxed max-w-[85%]">
+          <p class="font-semibold text-white mb-1">Hello! 👋</p>
+          <p>I'm <strong>John Irvin Udang's AI Assistant</strong>, powered by Google Gemini AI.</p>
+          <p class="mt-2">Ask me anything about John's 9+ years of engineering experience, tech stacks (React, Next.js, C# .NET, SaaS, Cloud), sample projects, or how to get in touch!</p>
+          <span class="mt-2.5 inline-block text-[10px] font-mono text-neutral-500">Just now</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suggested Quick Prompts -->
+    <div class="border-t border-white/5 bg-neutral-900/40 px-3 py-2 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+      <button onclick="sendQuickPrompt('What are John\'s core skills?')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+        Core skills?
+      </button>
+      <button onclick="sendQuickPrompt('Tell me about his SaaS projects')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+        SaaS projects?
+      </button>
+      <button onclick="sendQuickPrompt('What AI & LLM tech does he use?')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+        AI &amp; LLM tech?
+      </button>
+      <button onclick="sendQuickPrompt('How can I contact or hire John?')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+        How to contact?
+      </button>
+    </div>
+
+    <!-- Input Form -->
+    <form id="chatForm" onsubmit="handleChatSubmit(event)" class="border-t border-white/10 bg-neutral-900/80 p-3 flex items-center gap-2">
+      <input type="text" id="chatInput" placeholder="Ask about John's experience, stack, or projects..." class="flex-1 rounded-xl border border-white/15 bg-neutral-950 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" autocomplete="off" />
+      <button type="submit" id="chatSubmitBtn" class="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-black hover:bg-neutral-200 active:scale-95 transition-all">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- APPLICATION DATA & LOGIC -->
+  <script>
+    // PROFILE DATA
+    const profileInfo = {
+      name: "John Irvin C. Udang",
+      title: "Senior Full-Stack & SaaS Developer",
+      tagline: "Building scalable SaaS platforms, high-performance web applications, and interactive digital experiences with over 9+ years of engineering across modern front-end, back-end, cloud, and AI ecosystems.",
+      philosophy: "I utilize Gemini AI for speedy development while monitoring the readability of the code.",
+      location: "Bacolod City, Philippines",
+      email: "johnirvinudang@gmail.com",
+      phone: "+63 915 066 5312",
+      avatar: "profile.png",
+      education: {
+        degree: "Bachelor of Science in Information Technology (BSIT)",
+        school: "STI Davao",
+        period: "2012 – 2016"
+      },
+      socials: {
+        github: "https://github.com/tricks12143?tab=repositories",
+        linkedin: "https://www.linkedin.com/in/john-irvin-udang-3b1482109/",
+        jobstreet: "https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72"
+      }
+    };
+
+    const skillCategories = [
+      {
+        title: "Frontend Engineering & UI",
+        description: "Modern, reactive, and responsive interfaces built with clean component architecture.",
+        skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "AngularJS", "SCSS", "styled-components", "Bootstrap", "Fluent UI", "Ionic", "AJAX / jQuery"]
+      },
+      {
+        title: "Backend, APIs & Architecture",
+        description: "Robust server-side logic, API design, data pipelines, and performance optimization.",
+        skills: ["SaaS Programming", "Multi-Tenant Architecture", "Node.js", "Express.js", "C# .NET", "PHP", "GraphQL", "RESTful APIs", "Swagger / OpenAPI", "Query Caching", "Lazy Loading", "Error Handling"]
+      },
+      {
+        title: "Databases & Data Stores",
+        description: "Relational, document-oriented, distributed, and vector storage engines.",
+        skills: ["MongoDB", "CouchDB", "MySQL", "MSSQL", "SQLite", "NoSQL", "ChromaDB (Vector DB)"]
+      },
+      {
+        title: "AI, GenAI & Modern Ecosystems",
+        description: "LLM integration, retrieval pipelines, AI assistants, and modern developer workflows.",
+        skills: ["Azure OpenAI", "LangChain", "Claude AI", "Gemini AI", "GitHub Copilot", "CodeX", "ChromaDB Embeddings"]
+      },
+      {
+        title: "Cloud, DevOps & Enterprise Tools",
+        description: "Cloud infrastructure, intranet development, automation, and continuous delivery.",
+        skills: ["Microsoft Azure", "AWS", "Azure DevOps", "Power Apps (Canvas & Dataverse)", "Power Automate", "SharePoint", "OutSystems Migration", "Slack / Agile Tooling"]
+      },
+      {
+        title: "Specialty, Interactive & Systems",
+        description: "Canvas game development, document generation, data visualization, and hardware/software systems.",
+        skills: ["Phaser.js (Game Web Dev)", "D3.js", "Chart.js", "PDF.js", "React-PDF", "jsPDF", "Adobe Photoshop", "Hardware Troubleshooting", "Software Troubleshooting", "Technical Documentation"]
+      }
+    ];
+
+    const sampleProjects = [
+      {
+        id: "real-estate-platforms",
+        title: "High-Performance Real Estate Search & Listing Platforms",
+        category: "Full-Stack & Web",
+        description: "Engineered comprehensive real estate web applications featuring fast property search, dynamic MLS-style listings, responsive client portals, and performance-tuned asset delivery.",
+        techStack: ["React.js", "PHP", "WordPress", "JavaScript", "MySQL", "Bootstrap", "SCSS", "Query Caching"],
+        keyHighlights: [
+          "Engineered responsive property search with custom query caching and instant filtering.",
+          "Optimized high-resolution real estate photo galleries with lazy loading and asset compression.",
+          "Built clean, modular components ensuring robust cross-browser and mobile performance."
+        ],
+        links: [
+          { label: "Real Estate Experts", url: "https://www.realestateexperts.net/" },
+          { label: "Call Kym Portal", url: "http://callkym.com/" },
+          { label: "Damon Sells Homes", url: "http://www.damonsells.com/" }
+        ]
+      },
+      {
+        id: "corporate-web-portals",
+        title: "Corporate & International Business Web Ecosystems",
+        category: "Full-Stack & Web",
+        description: "Architected clean, modern multi-page web platforms for corporate entities and international business councils, prioritizing performance, accessibility, and intuitive navigation.",
+        techStack: ["JavaScript", "PHP", "HTML5", "CSS3", "Responsive Architecture", "SEO Optimization"],
+        keyHighlights: [
+          "Designed clean, responsive layouts tailored for executive audiences and international stakeholders.",
+          "Implemented streamlined content architectures with semantic SEO markup.",
+          "Engineered lightweight, dependency-free interactive UI elements for lightning-fast page speeds."
+        ],
+        links: [
+          { label: "Austria Business Council", url: "https://www.austriabc.com/" },
+          { label: "WTEI Group Portal", url: "https://www.wteigroup.com/" }
+        ]
+      },
+      {
+        id: "event-cms-mobile-suite",
+        title: "Cross-Platform Event CMS & Synchronized Mobile Suite",
+        category: "Full-Stack & Web",
+        description: "Engineered a multi-tenant content management system and companion mobile application for event management, featuring offline synchronization and real-time content updates.",
+        techStack: ["Angular", "Ionic", "Node.js", "Express.js", "CouchDB", "Query Caching", "Lazy Loading", "Error Handling"],
+        keyHighlights: [
+          "Constructed a cross-platform mobile client with offline-first synchronization using CouchDB.",
+          "Architected administrative web dashboards for real-time agenda, media, and attendee management.",
+          "Implemented robust query caching and error boundaries to ensure zero downtime during live events."
+        ],
+        links: [
+          { label: "Event CMS Portal", url: "http://cms.duuzra.com/cms/login" },
+          { label: "Android Application", url: "https://play.google.com/store/apps/details?id=com.ep.duuzra.mobile&hl=en" }
+        ]
+      },
+      {
+        id: "enterprise-cloud-automation",
+        title: "Enterprise Cloud Automation & Intranet Platform",
+        category: "Cloud & Enterprise",
+        description: "Spearheaded full-stack intranet extensions, task management applications, automated cloud workflows, and custom component libraries for enterprise infrastructure.",
+        techStack: ["Next.js", "React", "TypeScript", "GraphQL", "Azure", "Azure DevOps", "Power Apps (Dataverse)", "Power Automate", "Fluent UI", "React-PDF", "jsPDF", "Swagger"],
+        keyHighlights: [
+          "Engineered custom extensions and helper libraries integrated into Azure DevOps environments.",
+          "Built automated enterprise canvas applications using Microsoft Power Apps and Dataverse backends.",
+          "Developed programmatic client-side and server-side PDF reporting engines using React-PDF and jsPDF.",
+          "Produced comprehensive OpenAPI / Swagger specifications and interactive documentation for developers."
+        ]
+      },
+      {
+        id: "interactive-game-canvas",
+        title: "Interactive Game Canvas & High-Performance Web Ecosystems",
+        category: "Interactive & AI",
+        description: "Led frontend engineering in architecting and delivering high-performance, interactive applications bridging complex game mechanics with modern web and mobile user interfaces.",
+        techStack: ["Next.js", "Phaser.js", "React", "TypeScript", "HTML5 Canvas", "Modern Web Standards", "AI-Assisted Workflows"],
+        keyHighlights: [
+          "Bridged complex game loop mechanics with reactive Next.js state management and intuitive UI overlays.",
+          "Championed web performance standards, minimal bundle footprints, and smooth 60fps animations.",
+          "Led architectural technical strategy from concept to production deployment."
+        ]
+      },
+      {
+        id: "genai-retrieval-architecture",
+        title: "GenAI Retrieval-Augmented Generation (RAG) Architecture",
+        category: "Interactive & AI",
+        description: "Engineered intelligent workflow systems leveraging Large Language Models, vector similarity search, and automated generative AI pipelines.",
+        techStack: ["Azure OpenAI", "LangChain", "ChromaDB", "Next.js", "Node.js", "C# .NET", "Vector Search"],
+        keyHighlights: [
+          "Constructed LangChain orchestration pipelines for contextual information retrieval and document Q&A.",
+          "Implemented ChromaDB vector indexing for low-latency semantic search across knowledge repositories.",
+          "Integrated secure API boundaries and error-resilient prompt chaining mechanisms."
+        ]
+      },
+      {
+        id: "gemini-ai-assistant",
+        title: "Google Gemini AI Portfolio Assistant & Interactive Chatbot",
+        category: "Interactive & AI",
+        description: "Engineered an interactive conversational AI assistant powered by Google Gemini AI and the official @google/genai SDK, featuring contextual system grounding, real-time typing dynamics, client key configuration, and offline knowledge fallbacks.",
+        techStack: ["Google Gemini AI", "@google/genai SDK", "Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "RESTful API Routes", "Context Grounding"],
+        keyHighlights: [
+          "I utilize Gemini AI for speedy development while monitoring the readability of the code.",
+          "Integrated Google Gemini AI (gemini-2.5-flash / gemini-1.5-flash) with structured system prompts for contextual Q&A.",
+          "Designed a modern glassmorphic chat drawer with prompt suggestions, live indicators, and client API key options.",
+          "Engineered graceful fallback mechanisms ensuring seamless user experiences even without environment variables."
+        ]
+      }
+    ];
+
+    // STATE
+    let currentSkillCategory = "All";
+    let currentProjectCategory = "All";
+
+    // INITIALIZATION
+    window.addEventListener("DOMContentLoaded", () => {
+      renderSkillCategories();
+      renderSkills();
+      renderProjectCategories();
+      renderProjects();
+      initApiKey();
+      setupScrollSpy();
+    });
+
+    // SKILLS LOGIC
+    function renderSkillCategories() {
+      const container = document.getElementById("skillCategoryPills");
+      const categories = ["All", ...skillCategories.map(c => c.title)];
+      container.innerHTML = categories.map(cat => `
+        <button onclick="setSkillCategory('${cat}')" class="rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${
+          currentSkillCategory === cat
+            ? "bg-white text-black shadow"
+            : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
+        }">
+          ${cat}
+        </button>
+      `).join("");
+    }
+
+    function setSkillCategory(cat) {
+      currentSkillCategory = cat;
+      renderSkillCategories();
+      renderSkills();
+    }
+
+    function handleSkillFilter() {
+      renderSkills();
+    }
+
+    function renderSkills() {
+      const container = document.getElementById("skillsGrid");
+      const query = (document.getElementById("skillSearchInput").value || "").toLowerCase().trim();
+
+      const filtered = skillCategories.filter(cat => {
+        if (currentSkillCategory !== "All" && cat.title !== currentSkillCategory) {
+          return false;
+        }
+        if (!query) return true;
+        const matchesCat = cat.title.toLowerCase().includes(query);
+        const matchesSkills = cat.skills.some(s => s.toLowerCase().includes(query));
+        return matchesCat || matchesSkills;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full rounded-2xl border border-dashed border-white/15 p-8 text-center text-neutral-400">
+            No skills found matching "${query}".
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(cat => `
+        <div class="flex flex-col rounded-2xl border border-white/10 bg-neutral-900/50 p-6 transition-all duration-200 hover:border-white/25 hover:bg-neutral-900/80">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-semibold text-white">${cat.title}</h3>
+            <span class="font-mono text-xs text-neutral-500">${cat.skills.length} skills</span>
+          </div>
+          <p class="mt-2 text-xs text-neutral-400 leading-relaxed">${cat.description}</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            ${cat.skills.map(s => {
+              const isMatch = query && s.toLowerCase().includes(query);
+              return `
+                <span class="inline-flex items-center rounded-md px-2.5 py-1 text-xs font-mono transition-colors ${
+                  isMatch
+                    ? "bg-white text-black font-semibold"
+                    : "border border-white/10 bg-white/5 text-neutral-300 hover:border-white/30 hover:text-white"
+                }">
+                  ${s}
+                </span>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // PROJECTS LOGIC
+    function renderProjectCategories() {
+      const container = document.getElementById("projectCategoryTabs");
+      const categories = ["All", "Full-Stack & Web", "Cloud & Enterprise", "Interactive & AI"];
+      container.innerHTML = categories.map(cat => `
+        <button onclick="setProjectCategory('${cat}')" class="rounded-xl px-4 py-2 text-xs font-medium transition-all ${
+          currentProjectCategory === cat
+            ? "bg-white text-black shadow"
+            : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
+        }">
+          ${cat}
+        </button>
+      `).join("");
+    }
+
+    function setProjectCategory(cat) {
+      currentProjectCategory = cat;
+      renderProjectCategories();
+      renderProjects();
+    }
+
+    function handleProjectFilter() {
+      renderProjects();
+    }
+
+    function renderProjects() {
+      const container = document.getElementById("projectsList");
+      const query = (document.getElementById("projectSearchInput").value || "").toLowerCase().trim();
+
+      const filtered = sampleProjects.filter(p => {
+        if (currentProjectCategory !== "All" && p.category !== currentProjectCategory) {
+          return false;
+        }
+        if (!query) return true;
+        const matchesTitle = p.title.toLowerCase().includes(query);
+        const matchesDesc = p.description.toLowerCase().includes(query);
+        const matchesTech = p.techStack.some(t => t.toLowerCase().includes(query));
+        return matchesTitle || matchesDesc || matchesTech;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="rounded-2xl border border-dashed border-white/15 p-12 text-center">
+            <p class="text-sm text-neutral-400">No projects found matching "${query}".</p>
+            <button onclick="setProjectCategory('All'); document.getElementById('projectSearchInput').value=''; renderProjects();" class="mt-4 rounded-lg bg-white/10 px-4 py-2 text-xs font-semibold text-white hover:bg-white/20 transition-colors">
+              Reset Filters
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map((project, idx) => `
+        <article id="${project.id}" class="group rounded-3xl border border-white/10 bg-neutral-900/40 p-6 sm:p-8 transition-all duration-200 hover:border-white/25 hover:bg-neutral-900/70">
+          <div class="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-md border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-wider text-neutral-300">
+                  ${project.category}
+                </span>
+                <span class="font-mono text-xs text-neutral-500">
+                  Project #${String(idx + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold tracking-tight text-white sm:text-2xl">
+                ${project.title}
+              </h3>
+            </div>
+
+            ${project.links && project.links.length > 0 ? `
+              <div class="flex flex-wrap items-center gap-2">
+                ${project.links.map(link => `
+                  <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/40 hover:bg-white/15">
+                    <span>${link.label}</span>
+                    <svg class="h-3.5 w-3.5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                `).join("")}
+              </div>
+            ` : ""}
+          </div>
+
+          <p class="mt-4 text-sm text-neutral-300 leading-relaxed sm:text-base">
+            ${project.description}
+          </p>
+
+          <div class="mt-6 rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
+            <h4 class="font-mono text-xs uppercase tracking-wider text-neutral-400">
+              Key Technical Implementations &amp; Results:
+            </h4>
+            <ul class="mt-3 space-y-2 text-xs sm:text-sm text-neutral-300">
+              ${project.keyHighlights.map(h => `
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-white flex-shrink-0"></span>
+                  <span>${h}</span>
+                </li>
+              `).join("")}
+            </ul>
+          </div>
+
+          <div class="mt-6">
+            <span class="block font-mono text-xs uppercase tracking-wider text-neutral-400">
+              Technologies &amp; Architecture:
+            </span>
+            <div class="mt-2.5 flex flex-wrap gap-2">
+              ${project.techStack.map(t => `
+                <span class="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-neutral-300 transition-colors group-hover:border-white/20">
+                  ${t}
+                </span>
+              `).join("")}
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // UTILITIES
+    function copyText(text, btnId) {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById(btnId);
+        const originalText = btn.innerText;
+        btn.innerText = "Copied!";
+        btn.classList.add("text-emerald-400", "border-emerald-500/40");
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.classList.remove("text-emerald-400", "border-emerald-500/40");
+        }, 2000);
+      });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const iconClosed = document.getElementById("menuIconClosed");
+      const iconOpen = document.getElementById("menuIconOpen");
+      const isOpen = !menu.classList.contains("hidden");
+
+      if (isOpen) {
+        menu.classList.add("hidden");
+        iconClosed.classList.remove("hidden");
+        iconOpen.classList.add("hidden");
+      } else {
+        menu.classList.remove("hidden");
+        iconClosed.classList.add("hidden");
+        iconOpen.classList.remove("hidden");
+      }
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById("submitBtn");
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="h-4 w-4 animate-spin text-black" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+        <span>Sending...</span>
+      `;
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <span>Send Message</span>
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        `;
+        document.getElementById("contactForm").classList.add("hidden");
+        document.getElementById("formSuccess").classList.remove("hidden");
+      }, 700);
+    }
+
+    function resetContactForm() {
+      document.getElementById("contactForm").reset();
+      document.getElementById("contactForm").classList.remove("hidden");
+      document.getElementById("formSuccess").classList.add("hidden");
+    }
+
+    function setupScrollSpy() {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove("text-white", "bg-white/10", "shadow-inner");
+          link.classList.add("text-neutral-400");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("text-white", "bg-white/10", "shadow-inner");
+            link.classList.remove("text-neutral-400");
+          }
+        });
+      });
+    }
+
+    // CHATBOT ENGINE & GEMINI API INTEGRATION
+    let chatHistory = [
+      {
+        role: "assistant",
+        content: "Hello! 👋 I'm **John Irvin Udang's AI Assistant**, powered by **Google Gemini AI**.\n\nAsk me anything about John's 9+ years of engineering experience, tech stacks (React, Next.js, C# .NET, SaaS, Cloud), sample projects, or how to get in touch!"
+      }
+    ];
+
+    function toggleChat(forceOpen) {
+      const drawer = document.getElementById("chatDrawer");
+      const backdrop = document.getElementById("chatDrawerBackdrop");
+      const isClosed = drawer.classList.contains("hidden");
+      const shouldOpen = forceOpen !== undefined ? forceOpen : isClosed;
+
+      if (shouldOpen) {
+        drawer.classList.remove("hidden");
+        backdrop.classList.remove("hidden");
+        requestAnimationFrame(() => {
+          drawer.classList.remove("translate-y-full", "sm:translate-y-4", "opacity-0");
+          drawer.classList.add("translate-y-0", "opacity-100");
+        });
+        document.getElementById("chatInput").focus();
+        scrollChatToBottom();
+      } else {
+        drawer.classList.remove("translate-y-0", "opacity-100");
+        drawer.classList.add("translate-y-full", "sm:translate-y-4", "opacity-0");
+        setTimeout(() => {
+          drawer.classList.add("hidden");
+          backdrop.classList.add("hidden");
+        }, 250);
+      }
+    }
+
+    function toggleChatSettings() {
+      const panel = document.getElementById("chatSettingsPanel");
+      panel.classList.toggle("hidden");
+    }
+
+    function initApiKey() {
+      try {
+        const stored = localStorage.getItem("GEMINI_USER_API_KEY");
+        if (stored) {
+          document.getElementById("customApiKeyInput").value = stored;
+        }
+      } catch (e) {}
+    }
+
+    function saveApiKey() {
+      const key = (document.getElementById("customApiKeyInput").value || "").trim();
+      try {
+        if (key) {
+          localStorage.setItem("GEMINI_USER_API_KEY", key);
+        } else {
+          localStorage.removeItem("GEMINI_USER_API_KEY");
+        }
+        const notif = document.getElementById("apiKeyNotification");
+        notif.classList.remove("hidden");
+        setTimeout(() => {
+          notif.classList.add("hidden");
+          toggleChatSettings();
+        }, 1500);
+      } catch (e) {}
+    }
+
+    function scrollChatToBottom() {
+      const container = document.getElementById("chatMessages");
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function formatMarkdown(text) {
+      return text
+        .replace(/^### (.*$)/gim, '<h4 class="font-bold text-white mt-2 mb-1">$1</h4>')
+        .replace(/^## (.*$)/gim, '<h3 class="font-bold text-white mt-2 mb-1">$1</h3>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong class="text-white font-semibold">$1</strong>')
+        .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+        .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">$1</a>')
+        .replace(/^\* (.*$)/gim, '<li class="flex items-start gap-1.5 ml-2 mt-1"><span class="text-emerald-400">•</span><span>$1</span></li>')
+        .replace(/^- (.*$)/gim, '<li class="flex items-start gap-1.5 ml-2 mt-1"><span class="text-emerald-400">•</span><span>$1</span></li>')
+        .replace(/`([^`]+)`/g, '<code class="rounded bg-white/10 px-1 py-0.5 font-mono text-[11px] text-emerald-300">$1</code>')
+        .replace(/\n\n/g, '<div class="h-2"></div>')
+        .replace(/\n/g, '<br/>');
+    }
+
+    function appendUserMessage(text) {
+      const container = document.getElementById("chatMessages");
+      const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      const el = document.createElement("div");
+      el.className = "flex items-start justify-end gap-2";
+      el.innerHTML = `
+        <div class="rounded-2xl rounded-tr-sm bg-white px-4 py-3 text-black font-medium leading-relaxed max-w-[85%] shadow-md">
+          <p>${escapeHtml(text)}</p>
+          <span class="mt-1 block text-right text-[10px] text-neutral-600 font-mono">${time}</span>
+        </div>
+      `;
+      container.appendChild(el);
+      scrollChatToBottom();
+    }
+
+    function appendAssistantMessage(text, source) {
+      const container = document.getElementById("chatMessages");
+      const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      const el = document.createElement("div");
+      el.className = "flex items-start gap-3";
+      el.innerHTML = `
+        <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold">
+          AI
+        </div>
+        <div class="rounded-2xl rounded-tl-sm border border-white/10 bg-neutral-900/90 p-3.5 text-neutral-200 leading-relaxed max-w-[85%]">
+          <div>${formatMarkdown(text)}</div>
+          <div class="mt-2.5 flex items-center justify-between text-[10px] font-mono text-neutral-500">
+            <span>${time}</span>
+            <span class="text-emerald-400">${source === "gemini-api" ? "Google Gemini AI" : "Local Knowledge Base"}</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(el);
+      scrollChatToBottom();
+    }
+
+    function appendTypingIndicator() {
+      const container = document.getElementById("chatMessages");
+      const el = document.createElement("div");
+      el.id = "typingIndicator";
+      el.className = "flex items-start gap-3";
+      el.innerHTML = `
+        <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold">
+          AI
+        </div>
+        <div class="rounded-2xl rounded-tl-sm border border-white/10 bg-neutral-900/90 px-4 py-3 text-neutral-200 flex items-center gap-1.5">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-bounce"></span>
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-bounce" style="animation-delay: 0.15s"></span>
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-bounce" style="animation-delay: 0.3s"></span>
+        </div>
+      `;
+      container.appendChild(el);
+      scrollChatToBottom();
+    }
+
+    function removeTypingIndicator() {
+      const el = document.getElementById("typingIndicator");
+      if (el) el.remove();
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function sendQuickPrompt(prompt) {
+      document.getElementById("chatInput").value = prompt;
+      handleChatSubmit(new Event("submit"));
+    }
+
+    // INTELLIGENT KNOWLEDGE BASE (Offline-ready fallback)
+    function getKnowledgeFallback(query) {
+      const q = query.toLowerCase();
+
+      if (q.includes("skill") || q.includes("stack") || q.includes("technology") || q.includes("languages") || q.includes("tools")) {
+        return `### 🛠️ John's Core Technical Skills\n\nJohn has **9+ years** of extensive experience across the full stack:\n\n* **Frontend:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, styled-components, AngularJS, HTML5/CSS3.\n* **Backend & APIs:** SaaS Programming, Multi-Tenant Architecture, Node.js, Express.js, C# .NET, PHP, GraphQL, REST APIs, Swagger/OpenAPI.\n* **Databases:** MongoDB, CouchDB (offline sync), MySQL, MSSQL, ChromaDB (Vector DB).\n* **AI & GenAI:** Google Gemini AI, Azure OpenAI, LangChain, Claude AI, GitHub Copilot, ChromaDB Vector Embeddings.\n* **Cloud & DevOps:** Microsoft Azure, AWS, Azure DevOps, Power Apps, Power Automate.\n\nWould you like more details on his frontend architecture or AI pipelines?`;
+      }
+
+      if (q.includes("project") || q.includes("work") || q.includes("portfolio") || q.includes("sample")) {
+        return `### 🚀 Featured Engineering Projects\n\nHere are some of the notable systems John has architected:\n\n1. **GenAI Retrieval-Augmented Generation (RAG) Architecture**\n   - *Tech:* Azure OpenAI, LangChain, ChromaDB, Next.js, Node.js, C# .NET.\n   - *Focus:* Vector similarity search, automated LLM document Q&A pipelines.\n\n2. **High-Performance Real Estate Search & Listing Platforms**\n   - *Tech:* React.js, PHP, MySQL, SCSS, Query Caching.\n   - *Live Portals:* [Real Estate Experts](https://www.realestateexperts.net/), [Call Kym Portal](http://callkym.com/).\n\n3. **Cross-Platform Event CMS & Mobile Suite (Duuzra)**\n   - *Tech:* Angular, Ionic, Node.js, CouchDB for offline synchronization.\n\n4. **Enterprise Cloud Automation & Intranet**\n   - *Tech:* Next.js, Azure DevOps, Power Apps, Dataverse, React-PDF, jsPDF.\n\n5. **Interactive Game Canvas Engine**\n   - *Tech:* Next.js, Phaser.js, HTML5 Canvas with smooth 60fps performance.\n\nYou can scroll down to the **Sample Work** section to inspect all case studies!`;
+      }
+
+      if (q.includes("contact") || q.includes("hire") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("location") || q.includes("interview")) {
+        return `### 📬 How to Contact John Irvin Udang\n\nJohn is currently open for **Full-Stack, SaaS, and Senior Frontend** roles:\n\n* **Email:** [${profileInfo.email}](mailto:${profileInfo.email})\n* **Phone / WhatsApp:** [${profileInfo.phone}](tel:+639150665312)\n* **Location:** Bacolod City, Philippines (GMT+8, experienced with global remote collaboration)\n* **Profiles:** [LinkedIn](${profileInfo.socials.linkedin}) • [GitHub](${profileInfo.socials.github}) • [JobStreet](${profileInfo.socials.jobstreet})\n\nYou can also jump to the **Contact** section to submit an inquiry!`;
+      }
+
+      if (q.includes("ai") || q.includes("gemini") || q.includes("langchain") || q.includes("llm") || q.includes("rag") || q.includes("gpt")) {
+        return `### 🤖 John's AI & GenAI Expertise\n\nJohn actively designs and integrates AI-powered solutions:\n\n* **Development Workflow:** I utilize Gemini AI for speedy development while monitoring the readability of the code.\n* **Gemini AI & Google Gen AI SDK:** Building contextual chatbots, automated document summaries, and multi-turn conversational agents.\n* **Azure OpenAI & LangChain:** Prompt chaining, semantic search, and RAG architectures.\n* **Vector Databases:** ChromaDB indexing for low-latency similarity retrieval.\n\n*Tip:* You can click the ⚙️ settings icon at the top of this drawer to enter a free Google Gemini API key for live generative responses!`;
+      }
+
+      if (q.includes("experience") || q.includes("background") || q.includes("who is") || q.includes("about") || q.includes("education") || q.includes("degree")) {
+        return `### 👨‍💻 About John Irvin C. Udang\n\nJohn is a **Senior Full-Stack & SaaS Developer** with **9+ years** of hands-on experience building high-scale web applications, enterprise systems, and interactive digital products.\n\n* **Education:** Bachelor of Science in Information Technology (BSIT), STI Davao (2012 – 2016).\n* **Core Strengths:** Clean modular architecture, query caching, high-performance UI/UX, SaaS multi-tenancy, and AI integration.\n* **Engineering Mindset:** Utilizes Gemini AI for speedy development while monitoring the readability and maintainability of the code.\n\nFeel free to ask about his specific tech stacks, past projects, or contact details!`;
+      }
+
+      return `### Hello! 👋\n\nI am **John Irvin Udang's AI Portfolio Assistant**, powered by **Google Gemini AI**.\n\nYou can ask me about:\n* John's **core technical skills** (React, Next.js, Node.js, C# .NET, AI)\n* His **SaaS & cloud projects**\n* His **experience and background**\n* How to **hire or get in touch with John**\n\n*(Note: You can click the ⚙️ icon to chat directly with live Gemini AI!)*`;
+    }
+
+    async function handleChatSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const input = document.getElementById("chatInput");
+      const text = (input.value || "").trim();
+      if (!text) return;
+
+      input.value = "";
+      appendUserMessage(text);
+      appendTypingIndicator();
+
+      chatHistory.push({ role: "user", content: text });
+
+      const customKey = (localStorage.getItem("GEMINI_USER_API_KEY") || "").trim();
+
+      if (customKey) {
+        // Direct call to Google Gemini Generative Language API
+        try {
+          const systemInstruction = `You are the official AI Portfolio Assistant for ${profileInfo.name}. ${profileInfo.title}. ${profileInfo.tagline}. Philosophy: ${profileInfo.philosophy}. Experience: 9+ years. Email: ${profileInfo.email}, Phone: ${profileInfo.phone}, Location: ${profileInfo.location}. Education: BSIT STI Davao. Answer questions accurately and concisely using markdown.`;
+
+          const contents = chatHistory.map(m => ({
+            role: m.role === "assistant" ? "model" : "user",
+            parts: [{ text: m.content }]
+          }));
+
+          const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${customKey}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: contents,
+              systemInstruction: { parts: [{ text: systemInstruction }] },
+              generationConfig: { temperature: 0.7 }
+            })
+          });
+
+          const data = await res.json();
+          removeTypingIndicator();
+
+          if (!res.ok) {
+            throw new Error(data.error?.message || "Gemini API call failed");
+          }
+
+          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No reply generated.";
+          chatHistory.push({ role: "assistant", content: reply });
+          appendAssistantMessage(reply, "gemini-api");
+          return;
+        } catch (err) {
+          console.warn("Direct Gemini API failed, falling back to knowledge base:", err);
+        }
+      }
+
+      // Offline intelligent knowledge base fallback
+      setTimeout(() => {
+        removeTypingIndicator();
+        const reply = getKnowledgeFallback(text);
+        chatHistory.push({ role: "assistant", content: reply });
+        appendAssistantMessage(reply, "local-knowledge-base");
+      }, 550);
+    }
+  </script>
+</body>
+</html>
