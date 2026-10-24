@@ -3,10 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { sampleProjects } from "@/lib/profileData";
+import PlayableModal from "@/components/PlayableModal";
 
 export default function WorkPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [activePlayable, setActivePlayable] = useState<{
+    url: string;
+    title: string;
+  } | null>(null);
 
   const categories = [
     "All",
@@ -31,7 +36,7 @@ export default function WorkPage() {
     <div className="mx-auto max-w-6xl px-6 py-12 sm:px-8 sm:py-16">
       {/* Header */}
       <div className="border-b border-white/10 pb-8">
-        <span className="font-mono text-xs uppercase tracking-widest text-neutral-400">
+        <span className="font-mono text-xs uppercase tracking-widest text-cyan-400">
           Portfolio &amp; Solutions
         </span>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -49,11 +54,10 @@ export default function WorkPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`rounded-xl px-4 py-2 text-xs font-medium transition-all ${
-                  selectedCategory === cat
-                    ? "bg-white text-black shadow"
-                    : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
-                }`}
+                className={`rounded-xl px-4 py-2 text-xs font-medium transition-all ${selectedCategory === cat
+                  ? "bg-white text-black shadow"
+                  : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
+                  }`}
               >
                 {cat}
               </button>
@@ -88,6 +92,55 @@ export default function WorkPage() {
         </div>
       </div>
 
+      {/* Featured Interactive Playable Spotlight Banner */}
+      <section className="mt-10 overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-neutral-900/90 via-neutral-900/60 to-cyan-950/30 p-6 sm:p-8 shadow-2xl shadow-cyan-950/40 relative">
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+        <div className="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-mono font-medium text-cyan-300">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+              </span>
+              Featured Interactive Demo • Playable Ad
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              Jenga – Interactive HTML5 Playable
+            </h2>
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+              Experience the full interactive playable ad directly in your browser. Powered by <strong>Phaser 3</strong>, <strong>Matter.js rigid-body physics</strong>, and <strong>Spine 2D skeletal animations</strong>, featuring touch/drag block manipulation and dynamic victory/retry loops.
+            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs text-neutral-400">
+              <span className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Phaser 3.88</span>
+              <span className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Matter.js Physics</span>
+              <span className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Spine 2D Runtime</span>
+              <span className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Standalone Single-File</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-3 flex-shrink-0">
+            <button
+              type="button"
+              onClick={() =>
+                setActivePlayable({
+                  url: "/jenga.html",
+                  title: "Jenga – Interactive HTML5 Playable",
+                })
+              }
+              className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-bold text-black shadow-lg shadow-cyan-500/25 transition-all duration-200 hover:scale-[1.03] hover:shadow-cyan-500/40 active:scale-[0.98]"
+            >
+              <svg className="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+              </svg>
+              <span>Play Interactive Demo</span>
+            </button>
+            <span className="text-[11px] font-mono text-neutral-400">
+              Opens simulated mobile/tablet modal
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* Projects List */}
       <div className="mt-12 space-y-10">
         {filteredProjects.length === 0 ? (
@@ -110,7 +163,10 @@ export default function WorkPage() {
             <article
               key={project.id}
               id={project.id}
-              className="group rounded-3xl border border-white/10 bg-neutral-900/40 p-6 sm:p-8 transition-all duration-200 hover:border-white/25 hover:bg-neutral-900/70"
+              className={`group rounded-3xl border bg-neutral-900/40 p-6 sm:p-8 transition-all duration-200 hover:bg-neutral-900/70 ${project.playableUrl
+                ? "border-cyan-500/30 hover:border-cyan-400/50 shadow-lg shadow-cyan-500/5"
+                : "border-white/10 hover:border-white/25"
+                }`}
             >
               <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
                 <div className="space-y-2">
@@ -118,6 +174,12 @@ export default function WorkPage() {
                     <span className="rounded-md border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-wider text-neutral-300">
                       {project.category}
                     </span>
+                    {project.playableUrl && (
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-cyan-400/40 bg-cyan-500/10 px-2.5 py-0.5 text-[11px] font-mono font-medium text-cyan-300">
+                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                        {project.playableBadge || "Playable Demo"}
+                      </span>
+                    )}
                     <span className="font-mono text-xs text-neutral-500">
                       Project #{String(idx + 1).padStart(2, "0")}
                     </span>
@@ -127,35 +189,55 @@ export default function WorkPage() {
                   </h2>
                 </div>
 
-                {/* External links if available */}
-                {project.links && project.links.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-2">
-                    {project.links.map((link, lIdx) => (
-                      <a
-                        key={lIdx}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/40 hover:bg-white/15"
-                      >
-                        <span>{link.label}</span>
-                        <svg
-                          className="h-3.5 w-3.5 text-neutral-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                {/* Action buttons: Playable launch + External links */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {project.playableUrl && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActivePlayable({
+                          url: project.playableUrl!,
+                          title: project.title,
+                        })
+                      }
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 px-4 py-2 text-xs font-semibold text-black shadow-md shadow-cyan-500/20 transition-all hover:scale-[1.02] hover:shadow-cyan-500/40 active:scale-[0.98]"
+                    >
+                      <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                      </svg>
+                      <span>Play Demo</span>
+                    </button>
+                  )}
+
+                  {project.links && project.links.length > 0 && (
+                    <>
+                      {project.links.map((link, lIdx) => (
+                        <a
+                          key={lIdx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/40 hover:bg-white/15"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </a>
-                    ))}
-                  </div>
-                )}
+                          <span>{link.label}</span>
+                          <svg
+                            className="h-3.5 w-3.5 text-neutral-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      ))}
+                    </>
+                  )}
+                </div>
               </div>
 
               <p className="mt-4 text-sm text-neutral-300 leading-relaxed sm:text-base">
@@ -170,7 +252,7 @@ export default function WorkPage() {
                 <ul className="mt-3 space-y-2 text-xs sm:text-sm text-neutral-300">
                   {project.keyHighlights.map((highlight, hIdx) => (
                     <li key={hIdx} className="flex items-start gap-2.5">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white flex-shrink-0" />
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -221,6 +303,14 @@ export default function WorkPage() {
           </Link>
         </div>
       </div>
+
+      {/* Playable Interactive Modal */}
+      <PlayableModal
+        isOpen={!!activePlayable}
+        onClose={() => setActivePlayable(null)}
+        gameUrl={activePlayable?.url || "/jenga.html"}
+        title={activePlayable?.title}
+      />
     </div>
   );
 }

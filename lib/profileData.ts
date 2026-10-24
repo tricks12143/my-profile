@@ -12,6 +12,8 @@ export interface ProjectItem {
   techStack: string[];
   keyHighlights: string[];
   links?: { label: string; url: string }[];
+  playableUrl?: string;
+  playableBadge?: string;
 }
 
 export const profileInfo = {
@@ -243,24 +245,27 @@ export const sampleProjects: ProjectItem[] = [
   },
   {
     id: "interactive-game-canvas",
-    title: "Interactive Game Canvas & High-Performance Web Ecosystems",
+    title: "Jenga – Interactive HTML5 Playable & Game Canvas",
     category: "Interactive & AI",
     description:
-      "Led frontend engineering in architecting and delivering high-performance, interactive applications bridging complex game mechanics with modern web and mobile user interfaces.",
+      "Engineered an interactive, high-performance HTML5 playable ad featuring realistic Matter.js physics Jenga block manipulation, Spine 2D skeletal animation runtimes, dynamic win/retry feedback loops, and standalone single-file distribution for ad networks.",
     techStack: [
-      "Next.js",
-      "Phaser.js",
-      "React",
-      "TypeScript",
+      "Phaser 3",
+      "Matter.js Physics",
+      "Spine 2D Runtime",
+      "JavaScript (ES6+)",
       "HTML5 Canvas",
-      "Modern Web Standards",
-      "AI-Assisted Workflows",
+      "Vite SingleFile",
+      "AppLovin / MRAID",
     ],
     keyHighlights: [
-      "Bridged complex game loop mechanics with reactive Next.js state management and intuitive UI overlays.",
-      "Championed web performance standards, minimal bundle footprints, and smooth 60fps animations.",
-      "Led architectural technical strategy from concept to production deployment.",
+      "Simulated real-time rigid-body block pulling and gravity collapse dynamics with Matter.js physics engine.",
+      "Integrated Spine 2D skeletal animations for fluid character reactions and celebration states.",
+      "Engineered touch & drag gesture mechanics with raycasting and collision boundaries for mobile and desktop viewports.",
+      "Packaged as a zero-external-dependency, production-optimized single-bundle playable ad under strict ad network constraints.",
     ],
+    playableUrl: "/jenga.html",
+    playableBadge: "Playable Ad Demo",
   },
   {
     id: "genai-retrieval-architecture",
