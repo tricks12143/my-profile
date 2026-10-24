@@ -4,8 +4,49 @@ import { useState } from "react";
 import Link from "next/link";
 import { sampleProjects } from "@/lib/profileData";
 import PlayableModal from "@/components/PlayableModal";
+import { useCart } from "@/lib/cartContext";
+
+const STOREFRONT_PRODUCTS = [
+  {
+    id: "prod-cloud-cart",
+    name: "Enterprise Headless Cart Engine",
+    price: 899,
+    category: "Storefront Module",
+    description: "Ultra-fast headless cart state engine with optimistic mutations, local storage caching, and multi-tab sync.",
+    badge: "Best Seller",
+    icon: "⚡",
+  },
+  {
+    id: "prod-stripe-checkout",
+    name: "Stripe & Webhook Checkout Suite",
+    price: 1250,
+    category: "Payment Pipeline",
+    description: "Complete payment workflow with automated webhooks, receipt generation, fraud detection, and tax calc.",
+    badge: "Production Ready",
+    icon: "💳",
+  },
+  {
+    id: "prod-inventory-sync",
+    name: "Real-time Stock & Inventory Sync",
+    price: 650,
+    category: "Backend Engine",
+    description: "Low-latency inventory validation service preventing race-condition overselling during peak traffic spikes.",
+    badge: "High Concurrency",
+    icon: "📦",
+  },
+  {
+    id: "prod-promo-engine",
+    name: "Dynamic Promo & Tiered Discounts",
+    price: 499,
+    category: "Conversion Tool",
+    description: "Configurable promotion engine for coupons, bundle discounts, automated checkout cross-sells, and tiered rewards.",
+    badge: "Conversion +28%",
+    icon: "🏷️",
+  },
+];
 
 export default function WorkPage() {
+  const { addToCart, setIsCartOpen } = useCart();
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activePlayable, setActivePlayable] = useState<{
@@ -209,6 +250,28 @@ export default function WorkPage() {
                     </button>
                   )}
 
+                  {/* Add to Cart / Request Quote Button for this project */}
+                  {project.price && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        addToCart({
+                          id: project.id,
+                          name: project.title,
+                          category: project.category,
+                          price: project.price!,
+                          badge: "Engineering Solution",
+                        });
+                      }}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition-all hover:bg-cyan-500/20 hover:border-cyan-400 active:scale-95"
+                    >
+                      <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                      </svg>
+                      <span>Add to Cart (${project.price.toLocaleString()})</span>
+                    </button>
+                  )}
+
                   {project.links && project.links.length > 0 && (
                     <>
                       {project.links.map((link, lIdx) => (
@@ -243,6 +306,91 @@ export default function WorkPage() {
               <p className="mt-4 text-sm text-neutral-300 leading-relaxed sm:text-base">
                 {project.description}
               </p>
+
+              {/* Special Interactive E-Commerce Demo Grid if project is the E-Commerce Showcase */}
+              {project.isEcommerceShowcase && (
+                <div className="mt-6 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 via-neutral-950/80 to-blue-950/20 p-5 sm:p-6 shadow-inner">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+                    <div>
+                      <div className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold">
+                        <span className="flex h-2 w-2 relative">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+                        </span>
+                        Interactive Live Demonstration
+                      </div>
+                      <h4 className="mt-1 text-base sm:text-lg font-bold text-white">
+                        Try the Cart System: Select Any Architecture Module
+                      </h4>
+                      <p className="text-xs text-neutral-400">
+                        Click &ldquo;Add to Cart&rdquo; below to test instant state updates, toast alerts, drawer checkout, and pricing recalculations.
+                      </p>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setIsCartOpen(true)}
+                      className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs font-bold text-black shadow hover:bg-neutral-200 transition-colors self-start sm:self-auto"
+                    >
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                      </svg>
+                      <span>Open Cart Drawer</span>
+                    </button>
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {STOREFRONT_PRODUCTS.map((prod) => (
+                      <div
+                        key={prod.id}
+                        className="flex flex-col justify-between rounded-xl border border-white/10 bg-neutral-900/70 p-4 transition-all duration-200 hover:border-cyan-400/50 hover:bg-neutral-900/90"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-2xl">{prod.icon}</span>
+                            <span className="rounded-full bg-cyan-500/10 border border-cyan-400/30 px-2 py-0.5 font-mono text-[10px] font-semibold text-cyan-300">
+                              {prod.badge}
+                            </span>
+                          </div>
+                          <h5 className="mt-3 text-sm font-bold text-white leading-snug">
+                            {prod.name}
+                          </h5>
+                          <span className="font-mono text-[11px] text-neutral-400">
+                            {prod.category}
+                          </span>
+                          <p className="mt-2 text-xs text-neutral-400 line-clamp-2">
+                            {prod.description}
+                          </p>
+                        </div>
+
+                        <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                          <span className="font-mono text-sm font-bold text-white">
+                            ${prod.price.toLocaleString()}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              addToCart({
+                                id: prod.id,
+                                name: prod.name,
+                                category: prod.category,
+                                price: prod.price,
+                                badge: prod.badge,
+                              })
+                            }
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-600 px-3 py-1.5 text-xs font-bold text-black shadow shadow-cyan-500/20 hover:scale-105 active:scale-95 transition-all"
+                          >
+                            <span>Add</span>
+                            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m8-8H4" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Key Highlights */}
               <div className="mt-6 rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
