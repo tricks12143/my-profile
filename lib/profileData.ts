@@ -12,6 +12,10 @@ export interface ProjectItem {
   techStack: string[];
   keyHighlights: string[];
   links?: { label: string; url: string }[];
+  playableUrl?: string;
+  playableBadge?: string;
+  price?: number;
+  isEcommerceShowcase?: boolean;
 }
 
 export const profileInfo = {
@@ -142,9 +146,35 @@ export const skillCategories: SkillCategory[] = [
 
 export const sampleProjects: ProjectItem[] = [
   {
+    id: "ecommerce-cloud-storefront",
+    title: "Next.js E-Commerce Storefront & High-Conversion Cart Engine",
+    category: "Full-Stack & Web",
+    price: 3400,
+    isEcommerceShowcase: true,
+    description:
+      "Engineered a high-performance modern e-commerce storefront system featuring dynamic product catalogs, client/server synchronized cart state, instant drawer previews, multi-currency support, and optimized checkout funnel flows.",
+    techStack: [
+      "Next.js App Router",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zustand / Context API",
+      "Stripe Checkout",
+      "Webhooks",
+      "Local Cache",
+    ],
+    keyHighlights: [
+      "Engineered instantaneous client-side cart updates with zero layout shift and optimistic UI feedback.",
+      "Built resilient local storage persistence and cross-tab cart synchronization.",
+      "Implemented streamlined checkout workflows with structured quote estimators and inventory validation.",
+      "Integrated modular promo code engine and dynamic shipping/tax calculation handlers.",
+    ],
+  },
+  {
     id: "real-estate-platforms",
     title: "High-Performance Real Estate Search & Listing Platforms",
     category: "Full-Stack & Web",
+    price: 2800,
     description:
       "Engineered comprehensive real estate web applications featuring fast property search, dynamic MLS-style listings, responsive client portals, and performance-tuned asset delivery.",
     techStack: [
@@ -172,6 +202,7 @@ export const sampleProjects: ProjectItem[] = [
     id: "corporate-web-portals",
     title: "Corporate & International Business Web Ecosystems",
     category: "Full-Stack & Web",
+    price: 2400,
     description:
       "Architected clean, modern multi-page web platforms for corporate entities and international business councils, prioritizing performance, accessibility, and intuitive navigation.",
     techStack: ["JavaScript", "PHP", "HTML5", "CSS3", "Responsive Architecture", "SEO Optimization"],
@@ -189,6 +220,7 @@ export const sampleProjects: ProjectItem[] = [
     id: "event-cms-mobile-suite",
     title: "Cross-Platform Event CMS & Synchronized Mobile Suite",
     category: "Full-Stack & Web",
+    price: 4200,
     description:
       "Engineered a multi-tenant content management system and companion mobile application for event management, featuring offline synchronization and real-time content updates.",
     techStack: [
@@ -218,6 +250,7 @@ export const sampleProjects: ProjectItem[] = [
     id: "enterprise-cloud-automation",
     title: "Enterprise Cloud Automation & Intranet Platform",
     category: "Cloud & Enterprise",
+    price: 4800,
     description:
       "Spearheaded full-stack intranet extensions, task management applications, automated cloud workflows, and custom component libraries for enterprise infrastructure.",
     techStack: [
@@ -243,29 +276,34 @@ export const sampleProjects: ProjectItem[] = [
   },
   {
     id: "interactive-game-canvas",
-    title: "Interactive Game Canvas & High-Performance Web Ecosystems",
+    title: "Jenga – Interactive HTML5 Playable & Game Canvas",
     category: "Interactive & AI",
+    price: 3200,
     description:
-      "Led frontend engineering in architecting and delivering high-performance, interactive applications bridging complex game mechanics with modern web and mobile user interfaces.",
+      "Engineered an interactive, high-performance HTML5 playable ad featuring realistic Matter.js physics Jenga block manipulation, Spine 2D skeletal animation runtimes, dynamic win/retry feedback loops, and standalone single-file distribution for ad networks.",
     techStack: [
-      "Next.js",
-      "Phaser.js",
-      "React",
-      "TypeScript",
+      "Phaser 3",
+      "Matter.js Physics",
+      "Spine 2D Runtime",
+      "JavaScript (ES6+)",
       "HTML5 Canvas",
-      "Modern Web Standards",
-      "AI-Assisted Workflows",
+      "Vite SingleFile",
+      "AppLovin / MRAID",
     ],
     keyHighlights: [
-      "Bridged complex game loop mechanics with reactive Next.js state management and intuitive UI overlays.",
-      "Championed web performance standards, minimal bundle footprints, and smooth 60fps animations.",
-      "Led architectural technical strategy from concept to production deployment.",
+      "Simulated real-time rigid-body block pulling and gravity collapse dynamics with Matter.js physics engine.",
+      "Integrated Spine 2D skeletal animations for fluid character reactions and celebration states.",
+      "Engineered touch & drag gesture mechanics with raycasting and collision boundaries for mobile and desktop viewports.",
+      "Packaged as a zero-external-dependency, production-optimized single-bundle playable ad under strict ad network constraints.",
     ],
+    playableUrl: "/jenga.html",
+    playableBadge: "Playable Ad Demo",
   },
   {
     id: "genai-retrieval-architecture",
     title: "GenAI Retrieval-Augmented Generation (RAG) Architecture",
     category: "Interactive & AI",
+    price: 5200,
     description:
       "Engineered intelligent workflow systems leveraging Large Language Models, vector similarity search, and automated generative AI pipelines.",
     techStack: [
@@ -287,6 +325,7 @@ export const sampleProjects: ProjectItem[] = [
     id: "gemini-ai-assistant",
     title: "Google Gemini AI Portfolio Assistant & Interactive Chatbot",
     category: "Interactive & AI",
+    price: 2600,
     description:
       "Engineered an interactive conversational AI assistant powered by Google Gemini AI and the official @google/genai SDK, featuring contextual system grounding, real-time typing dynamics, client key configuration, and offline knowledge fallbacks.",
     techStack: [

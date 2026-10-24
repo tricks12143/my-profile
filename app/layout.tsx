@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
+import CartDrawer from "@/components/CartDrawer";
+import { CartProvider } from "@/lib/cartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,10 +54,13 @@ export default function RootLayout({
         className="flex min-h-screen flex-col bg-neutral-950 text-neutral-100 selection:bg-white selection:text-black font-sans"
         suppressHydrationWarning
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <ChatBot />
+        <CartProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <ChatBot />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

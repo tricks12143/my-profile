@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Irvin Udang | Senior Full-Stack &amp; SaaS Developer</title>
-  <meta name="description" content="Portfolio of John Irvin C. Udang - Senior Full-stack &amp; SaaS developer with 9+ years of engineering experience across React, Next.js, TypeScript, Node.js, Cloud, and AI." />
-  <meta name="keywords" content="John Irvin Udang, Full-Stack Developer, SaaS Developer, React, Next.js, TypeScript, Node.js, Gemini AI, Azure, Portfolio" />
+  <meta name="description"
+    content="Portfolio of John Irvin C. Udang - Senior Full-stack &amp; SaaS developer with 9+ years of engineering experience across React, Next.js, TypeScript, Node.js, Cloud, and AI." />
+  <meta name="keywords"
+    content="John Irvin Udang, Full-Stack Developer, SaaS Developer, React, Next.js, TypeScript, Node.js, Gemini AI, Azure, Portfolio" />
   <meta name="author" content="John Irvin C. Udang" />
   <link rel="icon" href="public/favicon.ico" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -45,37 +50,60 @@
       width: 7px;
       height: 7px;
     }
+
     ::-webkit-scrollbar-track {
       background: #0a0a0a;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #262626;
       border-radius: 9999px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #404040;
     }
+
     ::selection {
       background-color: #ffffff;
       color: #000000;
     }
+
     /* Glow animations */
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.55; transform: scale(1.08); }
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.55;
+        transform: scale(1.08);
+      }
     }
+
     .animate-glow {
       animation: pulseGlow 8s ease-in-out infinite;
     }
   </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 font-sans min-h-screen flex flex-col selection:bg-white selection:text-black antialiased relative">
+
+<body
+  class="bg-neutral-950 text-neutral-100 font-sans min-h-screen flex flex-col selection:bg-white selection:text-black antialiased relative">
 
   <!-- BACKGROUND AMBIENT GLOW -->
   <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.025] rounded-full blur-[140px] animate-glow"></div>
-    <div class="absolute top-[40%] -right-40 w-[500px] h-[500px] bg-emerald-500/[0.02] rounded-full blur-[160px] animate-glow" style="animation-delay: -3s;"></div>
-    <div class="absolute bottom-10 -left-40 w-[500px] h-[500px] bg-sky-500/[0.02] rounded-full blur-[160px] animate-glow" style="animation-delay: -5s;"></div>
+    <div
+      class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.025] rounded-full blur-[140px] animate-glow">
+    </div>
+    <div
+      class="absolute top-[40%] -right-40 w-[500px] h-[500px] bg-emerald-500/[0.02] rounded-full blur-[160px] animate-glow"
+      style="animation-delay: -3s;"></div>
+    <div
+      class="absolute bottom-10 -left-40 w-[500px] h-[500px] bg-sky-500/[0.02] rounded-full blur-[160px] animate-glow"
+      style="animation-delay: -5s;"></div>
   </div>
 
   <!-- NAVIGATION BAR -->
@@ -83,7 +111,8 @@
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
       <!-- Logo -->
       <a href="#hero" class="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]">
-        <div class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white text-black font-mono font-bold text-lg shadow-sm group-hover:bg-neutral-200 transition-colors">
+        <div
+          class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white text-black font-mono font-bold text-lg shadow-sm group-hover:bg-neutral-200 transition-colors">
           JI
           <span class="absolute -bottom-0.5 -right-0.5 flex h-2.5 w-2.5">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
@@ -102,15 +131,32 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-1">
-        <a href="#hero" class="nav-link px-4 py-2 text-sm font-medium text-white bg-white/10 rounded-lg shadow-inner transition-all">Home</a>
-        <a href="#skills" class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Skills</a>
-        <a href="#work" class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Sample Work</a>
-        <a href="#contact" class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Contact</a>
-        
+        <a href="#hero"
+          class="nav-link px-4 py-2 text-sm font-medium text-white bg-white/10 rounded-lg shadow-inner transition-all">Home</a>
+        <a href="#skills"
+          class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Skills</a>
+        <a href="#work"
+          class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Sample
+          Work</a>
+        <a href="#contact"
+          class="nav-link px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-all">Contact</a>
+
+        <!-- Solution Cart Trigger Button -->
+        <button onclick="toggleCartDrawer(true)"
+          class="ml-2 inline-flex items-center gap-1.5 rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-semibold text-cyan-300 transition-all hover:bg-cyan-500/20 hover:border-cyan-500/50">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span>Cart</span>
+          <span id="navCartBadge" class="hidden ml-1 rounded-full bg-cyan-400 px-1.5 py-0.2 text-[10px] font-black text-black">0</span>
+        </button>
+
         <!-- Ask AI Button -->
-        <button onclick="toggleChat(true)" class="ml-2 inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/50">
+        <button onclick="toggleChat(true)"
+          class="ml-1 inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/50">
           <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
           </svg>
           Ask AI
         </button>
@@ -118,10 +164,16 @@
 
       <!-- Mobile Nav Buttons -->
       <div class="flex items-center gap-2 md:hidden">
-        <button onclick="toggleChat(true)" class="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-300">
+        <button onclick="toggleCartDrawer(true)"
+          class="rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1.5 text-xs font-semibold text-cyan-300">
+          Cart
+        </button>
+        <button onclick="toggleChat(true)"
+          class="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1.5 text-xs font-semibold text-emerald-300">
           Ask AI
         </button>
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="rounded-lg p-2 text-neutral-400 hover:bg-white/10 hover:text-white focus:outline-none">
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+          class="rounded-lg p-2 text-neutral-400 hover:bg-white/10 hover:text-white focus:outline-none">
           <svg id="menuIconClosed" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -135,11 +187,17 @@
     <!-- Mobile Dropdown -->
     <div id="mobileMenu" class="hidden border-b border-white/10 bg-neutral-950/95 px-6 py-4 md:hidden">
       <nav class="flex flex-col gap-2">
-        <a href="#hero" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-white hover:bg-white/10">Home</a>
-        <a href="#skills" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Skills</a>
-        <a href="#work" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Sample Work</a>
-        <a href="#contact" onclick="toggleMobileMenu()" class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Contact</a>
-        <button onclick="toggleMobileMenu(); toggleChat(true);" class="mt-2 flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-300">
+        <a href="#hero" onclick="toggleMobileMenu()"
+          class="rounded-lg px-4 py-2.5 text-base font-medium text-white hover:bg-white/10">Home</a>
+        <a href="#skills" onclick="toggleMobileMenu()"
+          class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Skills</a>
+        <a href="#work" onclick="toggleMobileMenu()"
+          class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Sample
+          Work</a>
+        <a href="#contact" onclick="toggleMobileMenu()"
+          class="rounded-lg px-4 py-2.5 text-base font-medium text-neutral-400 hover:text-white hover:bg-white/5">Contact</a>
+        <button onclick="toggleMobileMenu(); toggleChat(true);"
+          class="mt-2 flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-300">
           Ask John's Gemini AI
         </button>
       </nav>
@@ -154,9 +212,11 @@
           <!-- Text & CTAs -->
           <div class="lg:col-span-7">
             <!-- Availability Badge -->
-            <div class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-neutral-300 backdrop-blur-sm">
+            <div
+              class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-neutral-300 backdrop-blur-sm">
               <span class="relative flex h-2 w-2">
-                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
               </span>
               <span class="font-mono text-neutral-200">
@@ -173,34 +233,42 @@
             </p>
 
             <p class="mt-5 max-w-2xl text-base text-neutral-400 leading-relaxed sm:text-lg">
-              Building scalable SaaS platforms, high-performance web applications, and interactive digital experiences with over 9+ years of engineering across modern front-end, back-end, cloud, and AI ecosystems.
+              Building scalable SaaS platforms, high-performance web applications, and interactive digital experiences
+              with over 9+ years of engineering across modern front-end, back-end, cloud, and AI ecosystems.
             </p>
 
             <!-- Philosophy Badge -->
-            <div class="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-2 text-xs text-neutral-300">
+            <div
+              class="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-2 text-xs text-neutral-300">
               <span class="flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>
-                <strong class="text-emerald-400 font-medium">Philosophy:</strong> I utilize Gemini AI for speedy development while monitoring the readability of the code.
+                <strong class="text-emerald-400 font-medium">Philosophy:</strong> I utilize Gemini AI for speedy
+                development while monitoring the readability of the code.
               </span>
             </div>
 
             <!-- Call to Actions -->
             <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
-              <a href="#work" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 sm:px-6 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-neutral-200 hover:shadow-lg active:scale-95">
+              <a href="#work"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 sm:px-6 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-neutral-200 hover:shadow-lg active:scale-95">
                 Explore Sample Work
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
 
-              <button type="button" onclick="toggleChat(true)" class="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 sm:px-6 py-3.5 text-sm font-semibold text-emerald-300 transition-all duration-200 hover:bg-emerald-500/20 hover:border-emerald-500/60 active:scale-95">
-                <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+              <button type="button" onclick="toggleChat(true)"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 sm:px-6 py-3.5 text-sm font-semibold text-emerald-300 transition-all duration-200 hover:bg-emerald-500/20 hover:border-emerald-500/60 active:scale-95">
+                <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
                 </svg>
                 Ask Gemini AI
               </button>
 
-              <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 sm:px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/10 active:scale-95">
+              <a href="#contact"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 sm:px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/10 active:scale-95">
                 Get In Touch
               </a>
             </div>
@@ -209,16 +277,20 @@
             <div class="mt-8 flex flex-wrap items-center gap-6 text-xs text-neutral-400 font-mono">
               <div class="flex items-center gap-2">
                 <svg class="h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span>Bacolod City, Philippines</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg class="h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:johnirvinudang@gmail.com" class="hover:text-white transition-colors">johnirvinudang@gmail.com</a>
+                <a href="mailto:johnirvinudang@gmail.com"
+                  class="hover:text-white transition-colors">johnirvinudang@gmail.com</a>
               </div>
             </div>
           </div>
@@ -226,12 +298,19 @@
           <!-- Profile Picture Card -->
           <div class="flex justify-center lg:col-span-5 lg:justify-end">
             <div class="relative group">
-              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-b from-white/20 via-white/5 to-transparent opacity-75 blur-sm transition-all duration-300 group-hover:opacity-100"></div>
+              <div
+                class="absolute -inset-1 rounded-3xl bg-gradient-to-b from-white/20 via-white/5 to-transparent opacity-75 blur-sm transition-all duration-300 group-hover:opacity-100">
+              </div>
               <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-neutral-900 p-2 shadow-2xl">
-                <div class="relative h-80 w-72 sm:h-96 sm:w-80 overflow-hidden rounded-2xl bg-neutral-950 flex items-center justify-center">
+                <div
+                  class="relative h-80 w-72 sm:h-96 sm:w-80 overflow-hidden rounded-2xl bg-neutral-950 flex items-center justify-center">
                   <!-- Fallback avatar / image -->
-                  <img src="profile.png" onerror="this.onerror=null; this.src='public/profile.png';" alt="John Irvin C. Udang" class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                  <img src="profile.png" onerror="this.onerror=null; this.src='public/profile.png';"
+                    alt="John Irvin C. Udang"
+                    class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none">
+                  </div>
                   <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
                     <p class="font-mono text-xs uppercase tracking-wider text-neutral-400">
                       Senior Developer
@@ -247,7 +326,8 @@
         </div>
 
         <!-- Metrics / Stats Bar -->
-        <div class="mt-16 grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-neutral-900/40 p-6 backdrop-blur-sm sm:grid-cols-4">
+        <div
+          class="mt-16 grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-neutral-900/40 p-6 backdrop-blur-sm sm:grid-cols-4">
           <div class="flex flex-col items-center justify-center p-2 text-center">
             <span class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">9+</span>
             <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Years of Experience</span>
@@ -262,7 +342,8 @@
           </div>
           <div class="flex flex-col items-center justify-center p-2 text-center">
             <span class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">100%</span>
-            <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Client &amp; Team Focus</span>
+            <span class="mt-1 text-xs font-mono uppercase tracking-wider text-neutral-400">Client &amp; Team
+              Focus</span>
           </div>
         </div>
       </div>
@@ -270,7 +351,8 @@
 
     <!-- COMPREHENSIVE SKILLS SHOWCASE -->
     <section id="skills" class="mx-auto w-full max-w-6xl px-6 sm:px-8 scroll-mt-24">
-      <div class="flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end">
+      <div
+        class="flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end">
         <div>
           <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">
             Technical Expertise
@@ -286,9 +368,13 @@
         <!-- Search Box -->
         <div class="w-full md:w-64">
           <div class="relative">
-            <input id="skillSearchInput" type="text" placeholder="Search skill (e.g. Next.js, Azure)..." oninput="handleSkillFilter()" class="w-full rounded-xl border border-white/15 bg-neutral-900/80 px-3.5 py-2 pl-9 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" />
-            <svg class="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            <input id="skillSearchInput" type="text" placeholder="Search skill (e.g. Next.js, Azure)..."
+              oninput="handleSkillFilter()"
+              class="w-full rounded-xl border border-white/15 bg-neutral-900/80 px-3.5 py-2 pl-9 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" />
+            <svg class="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
         </div>
@@ -347,7 +433,8 @@
             </div>
             <h4 class="mt-4 font-semibold text-white">AI-Driven Workflows</h4>
             <p class="mt-2 text-xs text-neutral-400 leading-relaxed">
-              I utilize Gemini AI for speedy development while monitoring the readability of the code and adhering to clean architecture.
+              I utilize Gemini AI for speedy development while monitoring the readability of the code and adhering to
+              clean architecture.
             </p>
           </div>
 
@@ -374,7 +461,8 @@
           Sample Work &amp; Engineered Systems
         </h2>
         <p class="mt-4 max-w-2xl text-base text-neutral-400 leading-relaxed">
-          A showcase of web applications, enterprise tooling, mobile solutions, and interactive platforms developed over the years. Focused purely on system architecture, technical implementations, and engineering results.
+          A showcase of web applications, enterprise tooling, mobile solutions, and interactive platforms developed over
+          the years. Focused purely on system architecture, technical implementations, and engineering results.
         </p>
 
         <!-- Filter & Search Bar -->
@@ -386,11 +474,65 @@
           <!-- Project Search -->
           <div class="w-full sm:w-64">
             <div class="relative">
-              <input id="projectSearchInput" type="text" placeholder="Filter by tech or title..." oninput="handleProjectFilter()" class="w-full rounded-xl border border-white/15 bg-neutral-900/80 px-3.5 py-2 pl-9 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" />
-              <svg class="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <input id="projectSearchInput" type="text" placeholder="Filter by tech or title..."
+                oninput="handleProjectFilter()"
+                class="w-full rounded-xl border border-white/15 bg-neutral-900/80 px-3.5 py-2 pl-9 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" />
+              <svg class="absolute left-3 top-2.5 h-4 w-4 text-neutral-500" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Interactive Playable Spotlight Banner -->
+      <div
+        class="mt-10 overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-neutral-900/90 via-neutral-900/60 to-cyan-950/30 p-6 sm:p-8 shadow-2xl shadow-cyan-950/40 relative">
+        <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none">
+        </div>
+        <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div class="space-y-3 max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-mono font-medium text-cyan-300">
+              <span class="flex h-2 w-2 relative">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+              </span>
+              Featured Interactive Demo • Playable Ad
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              Jenga – Interactive HTML5 Playable
+            </h3>
+            <p class="text-sm sm:text-base text-neutral-300 leading-relaxed">
+              Experience the full interactive playable ad directly in your browser. Powered by <strong>Phaser
+                3</strong>, <strong>Matter.js rigid-body physics</strong>, and <strong>Spine 2D skeletal
+                animations</strong>, featuring touch/drag block manipulation and dynamic victory/retry loops.
+            </p>
+            <div class="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs text-neutral-400">
+              <span class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Phaser 3.88</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Matter.js Physics</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Spine 2D Runtime</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1">Standalone Single-File</span>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-3 flex-shrink-0">
+            <button type="button"
+              onclick="openPlayableModal('Jenga – Interactive Playable Demo', 'assets/jenga.html')"
+              class="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-bold text-black shadow-lg shadow-cyan-500/25 transition-all duration-200 hover:scale-[1.03] hover:shadow-cyan-500/40 active:scale-[0.98]">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+              </svg>
+              <span>Play Interactive Demo</span>
+            </button>
+            <span class="text-[11px] font-mono text-neutral-400">
+              Opens simulated mobile/tablet modal
+            </span>
           </div>
         </div>
       </div>
@@ -418,7 +560,8 @@
           </div>
 
           <div class="flex items-center gap-3">
-            <a href="#work" class="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-semibold text-white hover:border-white/50 hover:bg-white/10 transition-colors">
+            <a href="#work"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-semibold text-white hover:border-white/50 hover:bg-white/10 transition-colors">
               View Applied Projects
               <span class="font-mono">&rarr;</span>
             </a>
@@ -437,7 +580,8 @@
           Get in Touch
         </h2>
         <p class="mt-4 max-w-2xl text-base text-neutral-400 leading-relaxed">
-          Have an upcoming project, architecture challenge, or full-stack engineering requirement? Let's start a conversation.
+          Have an upcoming project, architecture challenge, or full-stack engineering requirement? Let's start a
+          conversation.
         </p>
       </div>
 
@@ -448,13 +592,15 @@
           <div class="rounded-2xl border border-white/10 bg-neutral-900/60 p-6">
             <div class="flex items-center gap-3">
               <span class="relative flex h-3 w-3">
-                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
               </span>
               <h3 class="font-semibold text-white">Current Availability</h3>
             </div>
             <p class="mt-3 text-xs text-neutral-300 leading-relaxed">
-              Open to full-stack software engineering, SaaS application development, senior frontend architecture, Next.js / React projects, and technical consulting.
+              Open to full-stack software engineering, SaaS application development, senior frontend architecture,
+              Next.js / React projects, and technical consulting.
             </p>
             <div class="mt-4 border-t border-white/5 pt-3 font-mono text-xs text-neutral-400">
               Response time: <span class="text-white">Within 24 hours</span>
@@ -467,10 +613,13 @@
               Email Address
             </span>
             <div class="mt-2 flex items-center justify-between gap-2">
-              <a href="mailto:johnirvinudang@gmail.com" class="text-base font-semibold text-white hover:underline truncate">
+              <a href="mailto:johnirvinudang@gmail.com"
+                class="text-base font-semibold text-white hover:underline truncate">
                 johnirvinudang@gmail.com
               </a>
-              <button id="copyEmailBtn" onclick="copyText('johnirvinudang@gmail.com', 'copyEmailBtn')" class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-neutral-300 hover:border-white/30 hover:text-white transition-colors" title="Copy to clipboard">
+              <button id="copyEmailBtn" onclick="copyText('johnirvinudang@gmail.com', 'copyEmailBtn')"
+                class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-neutral-300 hover:border-white/30 hover:text-white transition-colors"
+                title="Copy to clipboard">
                 Copy
               </button>
             </div>
@@ -485,7 +634,9 @@
               <a href="tel:+639150665312" class="text-base font-semibold text-white hover:underline font-mono">
                 +63 915 066 5312
               </a>
-              <button id="copyPhoneBtn" onclick="copyText('+63 915 066 5312', 'copyPhoneBtn')" class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-neutral-300 hover:border-white/30 hover:text-white transition-colors" title="Copy to clipboard">
+              <button id="copyPhoneBtn" onclick="copyText('+63 915 066 5312', 'copyPhoneBtn')"
+                class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-neutral-300 hover:border-white/30 hover:text-white transition-colors"
+                title="Copy to clipboard">
                 Copy
               </button>
             </div>
@@ -510,30 +661,38 @@
               Online Profiles
             </span>
             <div class="mt-4 flex flex-col gap-2.5">
-              <a href="https://github.com/tricks12143?tab=repositories" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
+              <a href="https://github.com/tricks12143?tab=repositories" target="_blank" rel="noopener noreferrer"
+                class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
                 <span class="flex items-center gap-2">
                   <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                   GitHub Repositories
                 </span>
                 <span class="text-neutral-400 font-mono text-[11px]">&nearr;</span>
               </a>
 
-              <a href="https://www.linkedin.com/in/john-irvin-udang-3b1482109/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
+              <a href="https://www.linkedin.com/in/john-irvin-udang-3b1482109/" target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
                 <span class="flex items-center gap-2">
                   <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   </svg>
                   LinkedIn Profile
                 </span>
                 <span class="text-neutral-400 font-mono text-[11px]">&nearr;</span>
               </a>
 
-              <a href="https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
+              <a href="https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72" target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:border-white/30 hover:bg-white/10">
                 <span class="flex items-center gap-2">
                   <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   JobStreet Profile
                 </span>
@@ -559,14 +718,16 @@
                   <label class="block font-mono text-xs text-neutral-400">
                     Your Name <span class="text-white">*</span>
                   </label>
-                  <input type="text" id="formName" required placeholder="Jane Doe" class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+                  <input type="text" id="formName" required placeholder="Jane Doe"
+                    class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
                 </div>
 
                 <div>
                   <label class="block font-mono text-xs text-neutral-400">
                     Email Address <span class="text-white">*</span>
                   </label>
-                  <input type="email" id="formEmail" required placeholder="jane@example.com" class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+                  <input type="email" id="formEmail" required placeholder="jane@example.com"
+                    class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
                 </div>
               </div>
 
@@ -574,17 +735,21 @@
                 <label class="block font-mono text-xs text-neutral-400">
                   Subject <span class="text-white">*</span>
                 </label>
-                <input type="text" id="formSubject" required placeholder="Project Inquiry / Job Opportunity" class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+                <input type="text" id="formSubject" required placeholder="Project Inquiry / Job Opportunity"
+                  class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
               </div>
 
               <div>
                 <label class="block font-mono text-xs text-neutral-400">
                   Your Message <span class="text-white">*</span>
                 </label>
-                <textarea id="formMessage" rows="5" required placeholder="Describe your project, timeline, or engineering needs..." class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none resize-none"></textarea>
+                <textarea id="formMessage" rows="5" required
+                  placeholder="Describe your project, timeline, or engineering needs..."
+                  class="mt-1.5 w-full rounded-xl border border-white/15 bg-neutral-950 px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-white focus:outline-none resize-none"></textarea>
               </div>
 
-              <button type="submit" id="submitBtn" class="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-neutral-200 active:scale-98">
+              <button type="submit" id="submitBtn"
+                class="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-neutral-200 active:scale-98">
                 <span>Send Message</span>
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -592,17 +757,21 @@
               </button>
             </form>
 
-            <div id="formSuccess" class="hidden mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-center">
-              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+            <div id="formSuccess"
+              class="hidden mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-center">
+              <div
+                class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <h3 class="mt-4 text-base font-semibold text-white">Message Received!</h3>
               <p class="mt-2 text-xs text-neutral-300">
-                Thank you for reaching out. Your message has been logged and I will review and reply via email at the earliest opportunity.
+                Thank you for reaching out. Your message has been logged and I will review and reply via email at the
+                earliest opportunity.
               </p>
-              <button onclick="resetContactForm()" class="mt-6 rounded-lg bg-white px-4 py-2 text-xs font-semibold text-black hover:bg-neutral-200 transition-colors">
+              <button onclick="resetContactForm()"
+                class="mt-6 rounded-lg bg-white px-4 py-2 text-xs font-semibold text-black hover:bg-neutral-200 transition-colors">
                 Send Another Message
               </button>
             </div>
@@ -613,19 +782,23 @@
 
     <!-- BOTTOM CTA BANNER -->
     <section class="mx-auto w-full max-w-6xl px-6 sm:px-8">
-      <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-neutral-900 px-8 py-12 text-center sm:px-16 sm:py-16">
+      <div
+        class="relative overflow-hidden rounded-3xl border border-white/15 bg-neutral-900 px-8 py-12 text-center sm:px-16 sm:py-16">
         <div class="relative z-10 mx-auto max-w-xl">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to collaborate?
           </h2>
           <p class="mt-3 text-sm text-neutral-400 leading-relaxed sm:text-base">
-            Whether you need full-stack development, frontend architecture, Next.js / React expertise, or AI integration, let's discuss your technical goals.
+            Whether you need full-stack development, frontend architecture, Next.js / React expertise, or AI
+            integration, let's discuss your technical goals.
           </p>
           <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-3 text-sm font-semibold text-black hover:bg-neutral-200 active:scale-95 transition-all">
+            <a href="#contact"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-3 text-sm font-semibold text-black hover:bg-neutral-200 active:scale-95 transition-all">
               Contact Me
             </a>
-            <a href="mailto:johnirvinudang@gmail.com" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all">
+            <a href="mailto:johnirvinudang@gmail.com"
+              class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white hover:border-white/50 hover:bg-white/10 active:scale-95 transition-all">
               Send Direct Email
             </a>
           </div>
@@ -641,13 +814,15 @@
         <!-- Brand info -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-2">
-            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-white text-black font-mono font-bold text-xs">
+            <span
+              class="flex h-7 w-7 items-center justify-center rounded-lg bg-white text-black font-mono font-bold text-xs">
               JI
             </span>
             <span class="font-semibold text-white">John Irvin C. Udang</span>
           </div>
           <p class="mt-3 max-w-sm text-sm text-neutral-400 leading-relaxed">
-            Full-stack developer focused on building robust, scalable web architectures, modern reactive frontends, and AI-powered interfaces.
+            Full-stack developer focused on building robust, scalable web architectures, modern reactive frontends, and
+            AI-powered interfaces.
           </p>
           <div class="mt-4 flex items-center gap-2 text-xs text-neutral-500 font-mono">
             <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
@@ -675,22 +850,26 @@
           </h4>
           <ul class="mt-3 space-y-2 text-sm">
             <li>
-              <a href="https://github.com/tricks12143?tab=repositories" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <a href="https://github.com/tricks12143?tab=repositories" target="_blank" rel="noopener noreferrer"
+                class="hover:text-white transition-colors inline-flex items-center gap-1.5">
                 GitHub <span class="text-xs text-neutral-500">&nearr;</span>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/john-irvin-udang-3b1482109/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <a href="https://www.linkedin.com/in/john-irvin-udang-3b1482109/" target="_blank"
+                rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
                 LinkedIn <span class="text-xs text-neutral-500">&nearr;</span>
               </a>
             </li>
             <li>
-              <a href="https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <a href="https://ph.jobstreet.com/profile/johnirvin-udang-j4tLsTFM72" target="_blank"
+                rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
                 JobStreet <span class="text-xs text-neutral-500">&nearr;</span>
               </a>
             </li>
             <li>
-              <a href="mailto:johnirvinudang@gmail.com" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+              <a href="mailto:johnirvinudang@gmail.com"
+                class="hover:text-white transition-colors inline-flex items-center gap-1.5">
                 Email Me <span class="text-xs text-neutral-500">&nearr;</span>
               </a>
             </li>
@@ -698,7 +877,8 @@
         </div>
       </div>
 
-      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row text-xs text-neutral-500">
+      <div
+        class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row text-xs text-neutral-500">
         <p>&copy; 2026 John Irvin Udang. All rights reserved.</p>
         <p class="font-mono">Engineered as Single-File Self-Contained Web App</p>
       </div>
@@ -707,11 +887,16 @@
 
   <!-- FLOATING GEMINI AI CHAT BUTTON -->
   <div class="fixed bottom-6 right-6 z-50">
-    <button id="floatingChatBtn" onclick="toggleChat()" class="group relative flex h-14 w-14 items-center justify-center rounded-2xl border border-emerald-500/40 bg-neutral-900/90 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-emerald-400 hover:bg-neutral-850 active:scale-95">
-      <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 to-teal-500/30 opacity-70 blur-md group-hover:opacity-100 transition-opacity"></div>
+    <button id="floatingChatBtn" onclick="toggleChat()"
+      class="group relative flex h-14 w-14 items-center justify-center rounded-2xl border border-emerald-500/40 bg-neutral-900/90 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-emerald-400 hover:bg-neutral-850 active:scale-95">
+      <div
+        class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 to-teal-500/30 opacity-70 blur-md group-hover:opacity-100 transition-opacity">
+      </div>
       <div class="relative flex items-center justify-center text-emerald-400">
-        <svg class="h-7 w-7 transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+        <svg class="h-7 w-7 transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
         </svg>
       </div>
       <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
@@ -722,17 +907,22 @@
   </div>
 
   <!-- GEMINI CHAT DRAWER / MODAL -->
-  <div id="chatDrawerBackdrop" onclick="toggleChat(false)" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
-  
-  <div id="chatDrawer" class="hidden fixed bottom-0 right-0 z-50 w-full sm:bottom-6 sm:right-6 sm:w-[440px] sm:max-h-[640px] h-[92vh] sm:h-[620px] rounded-t-3xl sm:rounded-3xl border border-white/15 bg-neutral-950/95 shadow-2xl backdrop-blur-2xl flex flex-col overflow-hidden transition-all duration-300 transform translate-y-full sm:translate-y-4 opacity-0">
+  <div id="chatDrawerBackdrop" onclick="toggleChat(false)"
+    class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+
+  <div id="chatDrawer"
+    class="hidden fixed bottom-0 right-0 z-50 w-full sm:bottom-6 sm:right-6 sm:w-[440px] sm:max-h-[640px] h-[92vh] sm:h-[620px] rounded-t-3xl sm:rounded-3xl border border-white/15 bg-neutral-950/95 shadow-2xl backdrop-blur-2xl flex flex-col overflow-hidden transition-all duration-300 transform translate-y-full sm:translate-y-4 opacity-0">
     <!-- Chat Header -->
     <div class="flex items-center justify-between border-b border-white/10 bg-neutral-900/60 px-5 py-4">
       <div class="flex items-center gap-3">
-        <div class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+        <div
+          class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
           </svg>
-          <span class="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-neutral-900"></span>
+          <span
+            class="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-neutral-900"></span>
         </div>
         <div>
           <h3 class="text-sm font-semibold text-white flex items-center gap-2">
@@ -746,13 +936,19 @@
       </div>
 
       <div class="flex items-center gap-1.5">
-        <button onclick="toggleChatSettings()" class="rounded-lg p-1.5 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors" title="API Settings">
+        <button onclick="toggleChatSettings()"
+          class="rounded-lg p-1.5 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors"
+          title="API Settings">
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </button>
-        <button onclick="toggleChat(false)" class="rounded-lg p-1.5 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors" title="Close Chat">
+        <button onclick="toggleChat(false)"
+          class="rounded-lg p-1.5 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors"
+          title="Close Chat">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -767,11 +963,14 @@
         <button onclick="toggleChatSettings()" class="text-neutral-400 hover:text-white">&times;</button>
       </div>
       <p class="mt-1 text-neutral-400">
-        Optional. If provided, chats connect directly to Google's Gemini 2.5/1.5 API. Leave blank to use the built-in intelligent offline knowledge base!
+        Optional. If provided, chats connect directly to Google's Gemini 2.5/1.5 API. Leave blank to use the built-in
+        intelligent offline knowledge base!
       </p>
       <div class="mt-2.5 flex gap-2">
-        <input type="password" id="customApiKeyInput" placeholder="AIzaSy..." class="flex-1 rounded-lg border border-white/15 bg-neutral-950 px-3 py-1.5 font-mono text-xs text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
-        <button onclick="saveApiKey()" class="rounded-lg bg-emerald-500 px-3 py-1.5 font-medium text-black hover:bg-emerald-400 transition-colors">
+        <input type="password" id="customApiKeyInput" placeholder="AIzaSy..."
+          class="flex-1 rounded-lg border border-white/15 bg-neutral-950 px-3 py-1.5 font-mono text-xs text-white placeholder-neutral-600 focus:border-white focus:outline-none" />
+        <button onclick="saveApiKey()"
+          class="rounded-lg bg-emerald-500 px-3 py-1.5 font-medium text-black hover:bg-emerald-400 transition-colors">
           Save
         </button>
       </div>
@@ -784,43 +983,294 @@
     <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 text-xs sm:text-sm">
       <!-- Initial Welcome Message -->
       <div class="flex items-start gap-3">
-        <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold">
+        <div
+          class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold">
           AI
         </div>
-        <div class="rounded-2xl rounded-tl-sm border border-white/10 bg-neutral-900/90 p-3.5 text-neutral-200 leading-relaxed max-w-[85%]">
+        <div
+          class="rounded-2xl rounded-tl-sm border border-white/10 bg-neutral-900/90 p-3.5 text-neutral-200 leading-relaxed max-w-[85%]">
           <p class="font-semibold text-white mb-1">Hello! 👋</p>
           <p>I'm <strong>John Irvin Udang's AI Assistant</strong>, powered by Google Gemini AI.</p>
-          <p class="mt-2">Ask me anything about John's 9+ years of engineering experience, tech stacks (React, Next.js, C# .NET, SaaS, Cloud), sample projects, or how to get in touch!</p>
+          <p class="mt-2">Ask me anything about John's 9+ years of engineering experience, tech stacks (React, Next.js,
+            C# .NET, SaaS, Cloud), sample projects, or how to get in touch!</p>
           <span class="mt-2.5 inline-block text-[10px] font-mono text-neutral-500">Just now</span>
         </div>
       </div>
     </div>
 
     <!-- Suggested Quick Prompts -->
-    <div class="border-t border-white/5 bg-neutral-900/40 px-3 py-2 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-      <button onclick="sendQuickPrompt('What are John\'s core skills?')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+    <div
+      class="border-t border-white/5 bg-neutral-900/40 px-3 py-2 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+      <button onclick="sendQuickPrompt('What are John\'s core skills?')"
+        class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
         Core skills?
       </button>
-      <button onclick="sendQuickPrompt('Tell me about his SaaS projects')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+      <button onclick="sendQuickPrompt('Tell me about his SaaS projects')"
+        class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
         SaaS projects?
       </button>
-      <button onclick="sendQuickPrompt('What AI & LLM tech does he use?')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+      <button onclick="sendQuickPrompt('What AI & LLM tech does he use?')"
+        class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
         AI &amp; LLM tech?
       </button>
-      <button onclick="sendQuickPrompt('How can I contact or hire John?')" class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
+      <button onclick="sendQuickPrompt('How can I contact or hire John?')"
+        class="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-neutral-300 hover:border-white/30 hover:bg-white/10 transition-colors">
         How to contact?
       </button>
     </div>
 
     <!-- Input Form -->
-    <form id="chatForm" onsubmit="handleChatSubmit(event)" class="border-t border-white/10 bg-neutral-900/80 p-3 flex items-center gap-2">
-      <input type="text" id="chatInput" placeholder="Ask about John's experience, stack, or projects..." class="flex-1 rounded-xl border border-white/15 bg-neutral-950 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none" autocomplete="off" />
-      <button type="submit" id="chatSubmitBtn" class="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-black hover:bg-neutral-200 active:scale-95 transition-all">
+    <form id="chatForm" onsubmit="handleChatSubmit(event)"
+      class="border-t border-white/10 bg-neutral-900/80 p-3 flex items-center gap-2">
+      <input type="text" id="chatInput" placeholder="Ask about John's experience, stack, or projects..."
+        class="flex-1 rounded-xl border border-white/15 bg-neutral-950 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:border-white focus:outline-none"
+        autocomplete="off" />
+      <button type="submit" id="chatSubmitBtn"
+        class="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-black hover:bg-neutral-200 active:scale-95 transition-all">
         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </button>
     </form>
+  </div>
+
+  <!-- PLAYABLE AD MODAL -->
+  <div id="playableModalBackdrop" onclick="closePlayableModal()"
+    class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md transition-opacity duration-300"></div>
+
+  <div id="playableModal" role="dialog" aria-modal="true" aria-labelledby="playableModalTitle"
+    class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 pointer-events-none">
+    <div
+      class="pointer-events-auto relative flex flex-col w-full max-w-5xl max-h-[96vh] rounded-3xl border border-white/15 bg-neutral-950/95 shadow-2xl shadow-cyan-500/10 overflow-hidden">
+      <!-- Header -->
+      <div
+        class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-neutral-900/80 px-4 py-3 sm:px-6">
+        <div class="flex items-center gap-3 min-w-0">
+          <div
+            class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center gap-2">
+              <h3 id="playableModalTitle" class="truncate text-sm sm:text-base font-bold text-white">
+                Jenga – Interactive Playable Demo
+              </h3>
+              <span
+                class="hidden sm:inline-flex rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-mono font-medium text-cyan-300">
+                Phaser 3 + Spine
+              </span>
+            </div>
+            <p class="text-[11px] text-neutral-400">
+              Interactive Canvas Playable Ad &bull; Matter.js Physics Engine
+            </p>
+          </div>
+        </div>
+
+        <!-- Controls: Viewport switcher + Restart + Fullscreen + Close -->
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <!-- Viewport switcher buttons -->
+          <div class="flex items-center rounded-xl border border-white/10 bg-neutral-900 p-0.5">
+            <button id="vpBtnMobile" type="button" onclick="setPlayableViewport('mobile')"
+              title="Mobile Portrait View (9:16)"
+              class="rounded-lg px-2.5 py-1 text-xs font-medium bg-white text-black shadow-sm transition-all">
+              📱 Phone
+            </button>
+            <button id="vpBtnTablet" type="button" onclick="setPlayableViewport('tablet')" title="Tablet View (3:4)"
+              class="rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-400 hover:text-white transition-all">
+              📱 Tablet
+            </button>
+            <button id="vpBtnFull" type="button" onclick="setPlayableViewport('expanded')"
+              title="Theater / Expanded View"
+              class="rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-400 hover:text-white transition-all">
+              🖥️ Full
+            </button>
+          </div>
+
+          <!-- Restart button -->
+          <button type="button" onclick="restartPlayableIframe()" title="Restart / Reload Playable"
+            class="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-neutral-200 transition-colors hover:border-white/30 hover:bg-white/15">
+            <svg class="h-3.5 w-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            <span class="hidden md:inline">Restart</span>
+          </button>
+
+          <!-- Direct Link -->
+          <a id="playableDirectLink" href="assets/jenga.html" target="_blank" rel="noopener noreferrer"
+            title="Open standalone playable in new tab"
+            class="inline-flex items-center rounded-xl border border-white/10 bg-white/5 p-1.5 text-neutral-300 transition-colors hover:border-white/30 hover:bg-white/15 hover:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+
+          <!-- Close button -->
+          <button type="button" onclick="closePlayableModal()" title="Close modal (Esc)"
+            class="inline-flex items-center rounded-xl border border-white/10 bg-white/5 p-1.5 text-neutral-300 transition-colors hover:border-red-500/40 hover:bg-red-500/20 hover:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Stage -->
+      <div
+        class="relative flex flex-1 items-center justify-center bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 p-2 sm:p-4 overflow-auto min-h-[460px] sm:min-h-[560px]">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none">
+        </div>
+
+        <!-- Frame Wrapper -->
+        <div id="playableFrameContainer"
+          class="relative transition-all duration-300 ease-out flex items-center justify-center w-[360px] sm:w-[390px] h-[640px] sm:h-[690px] rounded-[40px] border-4 border-neutral-700/80 bg-black p-2.5 shadow-2xl shadow-cyan-500/20 ring-1 ring-white/15">
+          <!-- Mobile Notch -->
+          <div id="playableMobileNotch"
+            class="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-full bg-neutral-900/90 px-3 py-0.5 border border-white/10 pointer-events-none">
+            <span class="h-2 w-2 rounded-full bg-neutral-700"></span>
+            <span class="h-1.5 w-8 rounded-full bg-neutral-800"></span>
+          </div>
+
+          <!-- Loading Spinner -->
+          <div id="playableLoadingSpinner"
+            class="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-neutral-950/90 rounded-[32px]">
+            <div
+              class="h-10 w-10 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent shadow-lg shadow-cyan-500/20">
+            </div>
+            <p class="text-xs font-mono text-cyan-300">Booting Phaser 3 Game Engine...</p>
+            <p class="text-[11px] text-neutral-500">Loading Spine 2D assets &amp; Matter.js physics</p>
+          </div>
+
+          <!-- iframe -->
+          <iframe id="playableIframe" src="" title="Jenga Playable"
+            class="h-full w-full rounded-[30px] border-0 bg-neutral-950"
+            allow="autoplay; fullscreen; accelerometer; gyroscope" onload="onPlayableIframeLoaded()"></iframe>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-white/10 bg-neutral-900/70 px-4 py-3 sm:px-6 text-xs text-neutral-400">
+        <div class="flex items-center gap-2 text-center sm:text-left">
+          <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span><strong class="text-white">Interactive Mechanics:</strong> Pull or tap the highlighted blocks while
+            keeping the tower upright.</span>
+        </div>
+        <div class="flex items-center gap-3 font-mono text-[11px] text-neutral-400">
+          <span>Size: ~6.4MB Single-File</span>
+          <span>&bull;</span>
+          <span>Ad Network: AppLovin / MRAID</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING CART TRIGGER BUTTON -->
+  <button id="floatingCartBtn" type="button" onclick="toggleCartDrawer(true)" aria-label="Open Solution Cart"
+    class="fixed bottom-6 left-6 z-40 flex items-center gap-2.5 rounded-full border border-white/20 bg-neutral-900/90 px-4 py-3 text-white shadow-2xl shadow-black/80 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-cyan-400 hover:shadow-cyan-500/20 active:scale-95 group">
+    <div class="relative">
+      <svg class="h-5 w-5 text-neutral-300 group-hover:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+      <span id="floatingCartCount" class="absolute -top-2 -right-2.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-1 text-[10px] font-black text-black">
+        0
+      </span>
+    </div>
+    <span class="hidden sm:inline font-mono text-xs font-semibold text-neutral-200">
+      Cart (<span id="floatingCartCountText">0</span>)
+    </span>
+    <span id="floatingCartPrice" class="hidden sm:inline font-mono text-xs text-cyan-400 font-bold border-l border-white/10 pl-2">
+      $0
+    </span>
+  </button>
+
+  <!-- CART TOAST NOTIFICATION -->
+  <div id="cartToast" class="fixed bottom-6 right-6 z-50 hidden flex-row items-center gap-3 rounded-2xl border border-emerald-500/40 bg-neutral-900/95 px-4 py-3 shadow-2xl shadow-emerald-950/50 backdrop-blur-md">
+    <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <div class="text-xs">
+      <p class="font-semibold text-white">Added to Cart!</p>
+      <p id="cartToastItemName" class="text-neutral-400 truncate max-w-[200px]"></p>
+    </div>
+    <button onclick="toggleCartDrawer(true)" class="ml-2 rounded-lg bg-emerald-500 px-2.5 py-1 text-[11px] font-bold text-black hover:bg-emerald-400 transition-colors">
+      View Cart
+    </button>
+  </div>
+
+  <!-- CART DRAWER BACKDROP -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm transition-opacity"></div>
+
+  <!-- CART SIDE DRAWER -->
+  <div id="cartDrawer"
+    class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col border-l border-white/10 bg-neutral-950/95 p-6 shadow-2xl backdrop-blur-2xl transition-transform duration-300 translate-x-full sm:p-7">
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-white/10 pb-5">
+      <div class="flex items-center gap-3">
+        <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-white text-base sm:text-lg flex items-center gap-2">
+            Solution &amp; Service Cart
+            <span id="cartDrawerBadge" class="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[11px] font-normal text-neutral-300">
+              0 items
+            </span>
+          </h3>
+          <p class="text-xs text-neutral-400 font-mono">
+            Interactive Engineering System Cart
+          </p>
+        </div>
+      </div>
+      <button onclick="toggleCartDrawer(false)" aria-label="Close cart drawer"
+        class="rounded-lg p-2 text-neutral-400 hover:bg-white/10 hover:text-white transition-colors">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items List / View -->
+    <div id="cartDrawerContent" class="flex-1 overflow-y-auto py-5 space-y-4">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Footer Summary -->
+    <div id="cartDrawerFooter" class="hidden border-t border-white/10 pt-4 space-y-3">
+      <div class="space-y-1.5 font-mono text-xs">
+        <div class="flex justify-between text-neutral-400">
+          <span>Selected Items:</span>
+          <span id="cartSummaryItemsCount" class="text-white">0</span>
+        </div>
+        <div class="flex justify-between text-neutral-400">
+          <span>Estimated Estimate:</span>
+          <span id="cartSummaryEstimate" class="text-white font-semibold">$0</span>
+        </div>
+        <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-white/10">
+          <span>Total Budget:</span>
+          <span id="cartSummaryTotal" class="text-cyan-400">$0</span>
+        </div>
+      </div>
+
+      <button type="button" onclick="showCartCheckoutForm()"
+        class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-600 py-3 text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-cyan-500/25 transition-all hover:scale-[1.02] hover:shadow-cyan-500/40 active:scale-[0.98]">
+        <span>Proceed to Solution Checkout</span>
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- APPLICATION DATA & LOGIC -->
@@ -882,9 +1332,25 @@
 
     const sampleProjects = [
       {
+        id: "ecommerce-cloud-storefront",
+        title: "Next.js E-Commerce Storefront & High-Conversion Cart Engine",
+        category: "Full-Stack & Web",
+        price: 3400,
+        isEcommerceShowcase: true,
+        description: "Engineered a high-performance modern e-commerce storefront system featuring dynamic product catalogs, client/server synchronized cart state, instant drawer previews, multi-currency support, and optimized checkout funnel flows.",
+        techStack: ["Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "Zustand / Context API", "Stripe Checkout", "Webhooks", "Local Cache"],
+        keyHighlights: [
+          "Engineered instantaneous client-side cart updates with zero layout shift and optimistic UI feedback.",
+          "Built resilient local storage persistence and cross-tab cart synchronization.",
+          "Implemented streamlined checkout workflows with structured quote estimators and inventory validation.",
+          "Integrated modular promo code engine and dynamic shipping/tax calculation handlers."
+        ]
+      },
+      {
         id: "real-estate-platforms",
         title: "High-Performance Real Estate Search & Listing Platforms",
         category: "Full-Stack & Web",
+        price: 2800,
         description: "Engineered comprehensive real estate web applications featuring fast property search, dynamic MLS-style listings, responsive client portals, and performance-tuned asset delivery.",
         techStack: ["React.js", "PHP", "WordPress", "JavaScript", "MySQL", "Bootstrap", "SCSS", "Query Caching"],
         keyHighlights: [
@@ -902,6 +1368,7 @@
         id: "corporate-web-portals",
         title: "Corporate & International Business Web Ecosystems",
         category: "Full-Stack & Web",
+        price: 2400,
         description: "Architected clean, modern multi-page web platforms for corporate entities and international business councils, prioritizing performance, accessibility, and intuitive navigation.",
         techStack: ["JavaScript", "PHP", "HTML5", "CSS3", "Responsive Architecture", "SEO Optimization"],
         keyHighlights: [
@@ -918,6 +1385,7 @@
         id: "event-cms-mobile-suite",
         title: "Cross-Platform Event CMS & Synchronized Mobile Suite",
         category: "Full-Stack & Web",
+        price: 4200,
         description: "Engineered a multi-tenant content management system and companion mobile application for event management, featuring offline synchronization and real-time content updates.",
         techStack: ["Angular", "Ionic", "Node.js", "Express.js", "CouchDB", "Query Caching", "Lazy Loading", "Error Handling"],
         keyHighlights: [
@@ -934,6 +1402,7 @@
         id: "enterprise-cloud-automation",
         title: "Enterprise Cloud Automation & Intranet Platform",
         category: "Cloud & Enterprise",
+        price: 4800,
         description: "Spearheaded full-stack intranet extensions, task management applications, automated cloud workflows, and custom component libraries for enterprise infrastructure.",
         techStack: ["Next.js", "React", "TypeScript", "GraphQL", "Azure", "Azure DevOps", "Power Apps (Dataverse)", "Power Automate", "Fluent UI", "React-PDF", "jsPDF", "Swagger"],
         keyHighlights: [
@@ -945,20 +1414,25 @@
       },
       {
         id: "interactive-game-canvas",
-        title: "Interactive Game Canvas & High-Performance Web Ecosystems",
+        title: "Jenga – Interactive HTML5 Playable & Game Canvas",
         category: "Interactive & AI",
-        description: "Led frontend engineering in architecting and delivering high-performance, interactive applications bridging complex game mechanics with modern web and mobile user interfaces.",
-        techStack: ["Next.js", "Phaser.js", "React", "TypeScript", "HTML5 Canvas", "Modern Web Standards", "AI-Assisted Workflows"],
+        price: 3200,
+        description: "Engineered an interactive, high-performance HTML5 playable ad featuring realistic Matter.js physics Jenga block manipulation, Spine 2D skeletal animation runtimes, dynamic win/retry feedback loops, and standalone single-file distribution for ad networks.",
+        techStack: ["Phaser 3", "Matter.js Physics", "Spine 2D Runtime", "JavaScript (ES6+)", "HTML5 Canvas", "Vite SingleFile", "AppLovin / MRAID"],
         keyHighlights: [
-          "Bridged complex game loop mechanics with reactive Next.js state management and intuitive UI overlays.",
-          "Championed web performance standards, minimal bundle footprints, and smooth 60fps animations.",
-          "Led architectural technical strategy from concept to production deployment."
-        ]
+          "Simulated real-time rigid-body block pulling and gravity collapse dynamics with Matter.js physics engine.",
+          "Integrated Spine 2D skeletal animations for fluid character reactions and celebration states.",
+          "Engineered touch & drag gesture mechanics with raycasting and collision boundaries for mobile and desktop viewports.",
+          "Packaged as a zero-external-dependency, production-optimized single-bundle playable ad under strict ad network constraints."
+        ],
+        playableUrl: "assets/jenga.html",
+        playableBadge: "Playable Demo"
       },
       {
         id: "genai-retrieval-architecture",
         title: "GenAI Retrieval-Augmented Generation (RAG) Architecture",
         category: "Interactive & AI",
+        price: 5200,
         description: "Engineered intelligent workflow systems leveraging Large Language Models, vector similarity search, and automated generative AI pipelines.",
         techStack: ["Azure OpenAI", "LangChain", "ChromaDB", "Next.js", "Node.js", "C# .NET", "Vector Search"],
         keyHighlights: [
@@ -971,6 +1445,7 @@
         id: "gemini-ai-assistant",
         title: "Google Gemini AI Portfolio Assistant & Interactive Chatbot",
         category: "Interactive & AI",
+        price: 2600,
         description: "Engineered an interactive conversational AI assistant powered by Google Gemini AI and the official @google/genai SDK, featuring contextual system grounding, real-time typing dynamics, client key configuration, and offline knowledge fallbacks.",
         techStack: ["Google Gemini AI", "@google/genai SDK", "Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "RESTful API Routes", "Context Grounding"],
         keyHighlights: [
@@ -982,12 +1457,55 @@
       }
     ];
 
+    // STOREFRONT DEMO PRODUCTS
+    const STOREFRONT_PRODUCTS = [
+      {
+        id: "prod-cloud-cart",
+        name: "Enterprise Headless Cart Engine",
+        price: 899,
+        category: "Storefront Module",
+        description: "Ultra-fast headless cart state engine with optimistic mutations, local storage caching, and multi-tab sync.",
+        badge: "Best Seller",
+        icon: "⚡"
+      },
+      {
+        id: "prod-stripe-checkout",
+        name: "Stripe & Webhook Checkout Suite",
+        price: 1250,
+        category: "Payment Pipeline",
+        description: "Complete payment workflow with automated webhooks, receipt generation, fraud detection, and tax calc.",
+        badge: "Production Ready",
+        icon: "💳"
+      },
+      {
+        id: "prod-inventory-sync",
+        name: "Real-time Stock & Inventory Sync",
+        price: 650,
+        category: "Backend Engine",
+        description: "Low-latency inventory validation service preventing race-condition overselling during peak traffic spikes.",
+        badge: "High Concurrency",
+        icon: "📦"
+      },
+      {
+        id: "prod-promo-engine",
+        name: "Dynamic Promo & Tiered Discounts",
+        price: 499,
+        category: "Conversion Tool",
+        description: "Configurable promotion engine for coupons, bundle discounts, automated checkout cross-sells, and tiered rewards.",
+        badge: "Conversion +28%",
+        icon: "🏷️"
+      }
+    ];
+
     // STATE
     let currentSkillCategory = "All";
     let currentProjectCategory = "All";
+    let cartItems = [];
+    let cartStep = "cart"; // "cart" | "form" | "success"
 
     // INITIALIZATION
     window.addEventListener("DOMContentLoaded", () => {
+      initCart();
       renderSkillCategories();
       renderSkills();
       renderProjectCategories();
@@ -1001,10 +1519,9 @@
       const container = document.getElementById("skillCategoryPills");
       const categories = ["All", ...skillCategories.map(c => c.title)];
       container.innerHTML = categories.map(cat => `
-        <button onclick="setSkillCategory('${cat}')" class="rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${
-          currentSkillCategory === cat
-            ? "bg-white text-black shadow"
-            : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
+        <button onclick="setSkillCategory('${cat}')" class="rounded-lg px-3.5 py-1.5 text-xs font-medium transition-all ${currentSkillCategory === cat
+          ? "bg-white text-black shadow"
+          : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
         }">
           ${cat}
         </button>
@@ -1053,17 +1570,16 @@
           <p class="mt-2 text-xs text-neutral-400 leading-relaxed">${cat.description}</p>
           <div class="mt-5 flex flex-wrap gap-2">
             ${cat.skills.map(s => {
-              const isMatch = query && s.toLowerCase().includes(query);
-              return `
-                <span class="inline-flex items-center rounded-md px-2.5 py-1 text-xs font-mono transition-colors ${
-                  isMatch
-                    ? "bg-white text-black font-semibold"
-                    : "border border-white/10 bg-white/5 text-neutral-300 hover:border-white/30 hover:text-white"
-                }">
+        const isMatch = query && s.toLowerCase().includes(query);
+        return `
+                <span class="inline-flex items-center rounded-md px-2.5 py-1 text-xs font-mono transition-colors ${isMatch
+            ? "bg-white text-black font-semibold"
+            : "border border-white/10 bg-white/5 text-neutral-300 hover:border-white/30 hover:text-white"
+          }">
                   ${s}
                 </span>
               `;
-            }).join("")}
+      }).join("")}
           </div>
         </div>
       `).join("");
@@ -1074,10 +1590,9 @@
       const container = document.getElementById("projectCategoryTabs");
       const categories = ["All", "Full-Stack & Web", "Cloud & Enterprise", "Interactive & AI"];
       container.innerHTML = categories.map(cat => `
-        <button onclick="setProjectCategory('${cat}')" class="rounded-xl px-4 py-2 text-xs font-medium transition-all ${
-          currentProjectCategory === cat
-            ? "bg-white text-black shadow"
-            : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
+        <button onclick="setProjectCategory('${cat}')" class="rounded-xl px-4 py-2 text-xs font-medium transition-all ${currentProjectCategory === cat
+          ? "bg-white text-black shadow"
+          : "border border-white/10 bg-neutral-900/60 text-neutral-400 hover:border-white/20 hover:text-white"
         }">
           ${cat}
         </button>
@@ -1122,13 +1637,19 @@
       }
 
       container.innerHTML = filtered.map((project, idx) => `
-        <article id="${project.id}" class="group rounded-3xl border border-white/10 bg-neutral-900/40 p-6 sm:p-8 transition-all duration-200 hover:border-white/25 hover:bg-neutral-900/70">
+        <article id="${project.id}" class="group rounded-3xl border ${project.playableUrl ? 'border-cyan-500/30 hover:border-cyan-400/50 shadow-lg shadow-cyan-500/5' : 'border-white/10 hover:border-white/25'} bg-neutral-900/40 p-6 sm:p-8 transition-all duration-200 hover:bg-neutral-900/70">
           <div class="flex flex-col justify-between gap-4 md:flex-row md:items-start">
             <div class="space-y-2">
               <div class="flex flex-wrap items-center gap-3">
                 <span class="rounded-md border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-wider text-neutral-300">
                   ${project.category}
                 </span>
+                ${project.playableUrl ? `
+                  <span class="inline-flex items-center gap-1.5 rounded-md border border-cyan-400/40 bg-cyan-500/10 px-2.5 py-0.5 text-[11px] font-mono font-medium text-cyan-300">
+                    <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                    ${project.playableBadge || "Playable Demo"}
+                  </span>
+                ` : ''}
                 <span class="font-mono text-xs text-neutral-500">
                   Project #${String(idx + 1).padStart(2, "0")}
                 </span>
@@ -1138,8 +1659,26 @@
               </h3>
             </div>
 
-            ${project.links && project.links.length > 0 ? `
-              <div class="flex flex-wrap items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
+              ${project.playableUrl ? `
+                <button type="button" onclick="openPlayableModal('${project.title}', '${project.playableUrl}')" class="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 px-4 py-2 text-xs font-semibold text-black shadow-md shadow-cyan-500/20 transition-all hover:scale-[1.02] hover:shadow-cyan-500/40 active:scale-[0.98]">
+                  <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                  </svg>
+                  <span>Play Demo</span>
+                </button>
+              ` : ''}
+
+              ${project.price ? `
+                <button type="button" onclick="addToCart({ id: '${project.id}', name: '${project.title.replace(/'/g, "\\'")}', category: '${project.category}', price: ${project.price}, badge: 'Engineering Solution' })" class="inline-flex items-center gap-1.5 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition-all hover:bg-cyan-500/20 hover:border-cyan-400 active:scale-95">
+                  <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  <span>Add to Cart ($${project.price.toLocaleString()})</span>
+                </button>
+              ` : ''}
+
+              ${project.links && project.links.length > 0 ? `
                 ${project.links.map(link => `
                   <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/40 hover:bg-white/15">
                     <span>${link.label}</span>
@@ -1148,13 +1687,80 @@
                     </svg>
                   </a>
                 `).join("")}
-              </div>
-            ` : ""}
+              ` : ""}
+            </div>
           </div>
 
           <p class="mt-4 text-sm text-neutral-300 leading-relaxed sm:text-base">
             ${project.description}
           </p>
+
+          ${project.isEcommerceShowcase ? `
+            <div class="mt-6 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 via-neutral-950/80 to-blue-950/20 p-5 sm:p-6 shadow-inner">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+                <div>
+                  <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-wider font-semibold">
+                    <span class="flex h-2 w-2 relative">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+                    </span>
+                    Interactive Live Demonstration
+                  </div>
+                  <h4 class="mt-1 text-base sm:text-lg font-bold text-white">
+                    Try the Cart System: Select Any Architecture Module
+                  </h4>
+                  <p class="text-xs text-neutral-400">
+                    Click "Add to Cart" below to test instant state updates, toast alerts, drawer checkout, and pricing recalculations.
+                  </p>
+                </div>
+
+                <button type="button" onclick="toggleCartDrawer(true)"
+                  class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs font-bold text-black shadow hover:bg-neutral-200 transition-colors self-start sm:self-auto">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  <span>Open Cart Drawer</span>
+                </button>
+              </div>
+
+              <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                ${STOREFRONT_PRODUCTS.map(prod => `
+                  <div class="flex flex-col justify-between rounded-xl border border-white/10 bg-neutral-900/70 p-4 transition-all duration-200 hover:border-cyan-400/50 hover:bg-neutral-900/90">
+                    <div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-2xl">${prod.icon}</span>
+                        <span class="rounded-full bg-cyan-500/10 border border-cyan-400/30 px-2 py-0.5 font-mono text-[10px] font-semibold text-cyan-300">
+                          ${prod.badge}
+                        </span>
+                      </div>
+                      <h5 class="mt-3 text-sm font-bold text-white leading-snug">
+                        ${prod.name}
+                      </h5>
+                      <span class="font-mono text-[11px] text-neutral-400">
+                        ${prod.category}
+                      </span>
+                      <p class="mt-2 text-xs text-neutral-400 line-clamp-2">
+                        ${prod.description}
+                      </p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                      <span class="font-mono text-sm font-bold text-white">
+                        $${prod.price.toLocaleString()}
+                      </span>
+                      <button type="button" onclick="addToCart({ id: '${prod.id}', name: '${prod.name.replace(/'/g, "\\'")}', category: '${prod.category}', price: ${prod.price}, badge: '${prod.badge}' })"
+                        class="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-600 px-3 py-1.5 text-xs font-bold text-black shadow shadow-cyan-500/20 hover:scale-105 active:scale-95 transition-all">
+                        <span>Add</span>
+                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          ` : ''}
 
           <div class="mt-6 rounded-2xl border border-white/5 bg-neutral-950/60 p-5">
             <h4 class="font-mono text-xs uppercase tracking-wider text-neutral-400">
@@ -1316,7 +1922,7 @@
         if (stored) {
           document.getElementById("customApiKeyInput").value = stored;
         }
-      } catch (e) {}
+      } catch (e) { }
     }
 
     function saveApiKey() {
@@ -1333,7 +1939,7 @@
           notif.classList.add("hidden");
           toggleChatSettings();
         }, 1500);
-      } catch (e) {}
+      } catch (e) { }
     }
 
     function scrollChatToBottom() {
@@ -1509,6 +2115,429 @@
         appendAssistantMessage(reply, "local-knowledge-base");
       }, 550);
     }
+
+    // PLAYABLE MODAL LOGIC
+    let currentPlayableUrl = "";
+
+    function openPlayableModal(title, url) {
+      currentPlayableUrl = url || "assets/jenga.html";
+      const titleEl = document.getElementById("playableModalTitle");
+      if (titleEl) titleEl.textContent = title || "Jenga – Interactive Playable Demo";
+
+      const linkEl = document.getElementById("playableDirectLink");
+      if (linkEl) linkEl.href = currentPlayableUrl;
+
+      const spinner = document.getElementById("playableLoadingSpinner");
+      if (spinner) spinner.classList.remove("hidden");
+
+      const iframe = document.getElementById("playableIframe");
+      if (iframe) iframe.src = currentPlayableUrl;
+
+      const backdrop = document.getElementById("playableModalBackdrop");
+      if (backdrop) backdrop.classList.remove("hidden");
+
+      const modal = document.getElementById("playableModal");
+      if (modal) modal.classList.remove("hidden");
+
+      document.body.style.overflow = "hidden";
+      setPlayableViewport("mobile");
+    }
+
+    function closePlayableModal() {
+      const backdrop = document.getElementById("playableModalBackdrop");
+      if (backdrop) backdrop.classList.add("hidden");
+
+      const modal = document.getElementById("playableModal");
+      if (modal) modal.classList.add("hidden");
+
+      document.body.style.overflow = "";
+
+      const iframe = document.getElementById("playableIframe");
+      if (iframe) iframe.src = "";
+    }
+
+    function restartPlayableIframe() {
+      const spinner = document.getElementById("playableLoadingSpinner");
+      if (spinner) spinner.classList.remove("hidden");
+
+      const iframe = document.getElementById("playableIframe");
+      if (iframe && currentPlayableUrl) {
+        iframe.src = currentPlayableUrl + (currentPlayableUrl.includes("?") ? "&" : "?") + "t=" + Date.now();
+      }
+    }
+
+    function onPlayableIframeLoaded() {
+      const spinner = document.getElementById("playableLoadingSpinner");
+      if (spinner) spinner.classList.add("hidden");
+    }
+
+    function setPlayableViewport(mode) {
+      const frame = document.getElementById("playableFrameContainer");
+      const notch = document.getElementById("playableMobileNotch");
+      const btnMobile = document.getElementById("vpBtnMobile");
+      const btnTablet = document.getElementById("vpBtnTablet");
+      const btnFull = document.getElementById("vpBtnFull");
+
+      if (!frame) return;
+
+      // Reset button styles
+      [btnMobile, btnTablet, btnFull].forEach(b => {
+        if (b) b.className = "rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-400 hover:text-white transition-all";
+      });
+
+      if (mode === "mobile") {
+        if (btnMobile) btnMobile.className = "rounded-lg px-2.5 py-1 text-xs font-medium bg-white text-black shadow-sm transition-all";
+        frame.className = "relative transition-all duration-300 ease-out flex items-center justify-center w-[360px] sm:w-[390px] h-[640px] sm:h-[690px] rounded-[40px] border-4 border-neutral-700/80 bg-black p-2.5 shadow-2xl shadow-cyan-500/20 ring-1 ring-white/15";
+        if (notch) notch.classList.remove("hidden");
+      } else if (mode === "tablet") {
+        if (btnTablet) btnTablet.className = "rounded-lg px-2.5 py-1 text-xs font-medium bg-white text-black shadow-sm transition-all";
+        frame.className = "relative transition-all duration-300 ease-out flex items-center justify-center w-[540px] sm:w-[600px] h-[640px] sm:h-[700px] rounded-3xl border-4 border-neutral-700/80 bg-black p-2.5 shadow-2xl shadow-blue-500/20 ring-1 ring-white/15";
+        if (notch) notch.classList.add("hidden");
+      } else {
+        if (btnFull) btnFull.className = "rounded-lg px-2.5 py-1 text-xs font-medium bg-white text-black shadow-sm transition-all";
+        frame.className = "relative transition-all duration-300 ease-out flex items-center justify-center w-full h-[75vh] rounded-2xl border border-white/10 bg-black overflow-hidden shadow-xl";
+        if (notch) notch.classList.add("hidden");
+      }
+    }
+
+    // CART SYSTEM ENGINE
+    const CART_STORAGE_KEY = "JOHN_PROFILE_CART_ITEMS_V1";
+
+    function initCart() {
+      try {
+        const stored = localStorage.getItem(CART_STORAGE_KEY);
+        if (stored) {
+          cartItems = JSON.parse(stored);
+        }
+      } catch (err) {
+        cartItems = [];
+      }
+      updateCartUI();
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+      } catch (err) {
+        // Ignore
+      }
+      updateCartUI();
+    }
+
+    function addToCart(item, qty = 1) {
+      const existing = cartItems.find(i => i.id === item.id);
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cartItems.push({
+          id: item.id,
+          name: item.name,
+          category: item.category,
+          price: item.price,
+          badge: item.badge || "",
+          quantity: qty
+        });
+      }
+      saveCart();
+      showCartToast(item.name);
+    }
+
+    function removeFromCart(id) {
+      cartItems = cartItems.filter(i => i.id !== id);
+      saveCart();
+    }
+
+    function updateCartQuantity(id, delta) {
+      const item = cartItems.find(i => i.id === id);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          removeFromCart(id);
+          return;
+        }
+      }
+      saveCart();
+    }
+
+    function clearCart() {
+      cartItems = [];
+      saveCart();
+    }
+
+    function toggleCartDrawer(forceOpen) {
+      const drawer = document.getElementById("cartDrawer");
+      const backdrop = document.getElementById("cartDrawerBackdrop");
+      const isClosed = drawer.classList.contains("translate-x-full");
+      const shouldOpen = forceOpen !== undefined ? forceOpen : isClosed;
+
+      if (shouldOpen) {
+        backdrop.classList.remove("hidden");
+        drawer.classList.remove("translate-x-full");
+        drawer.classList.add("translate-x-0");
+        renderCartDrawer();
+      } else {
+        drawer.classList.remove("translate-x-0");
+        drawer.classList.add("translate-x-full");
+        backdrop.classList.add("hidden");
+        setTimeout(() => {
+          cartStep = "cart";
+        }, 300);
+      }
+    }
+
+    function showCartToast(itemName) {
+      const toast = document.getElementById("cartToast");
+      const nameEl = document.getElementById("cartToastItemName");
+      if (!toast || !nameEl) return;
+
+      nameEl.innerText = itemName;
+      toast.classList.remove("hidden");
+      toast.classList.add("flex");
+
+      if (window._cartToastTimer) clearTimeout(window._cartToastTimer);
+      window._cartToastTimer = setTimeout(() => {
+        toast.classList.add("hidden");
+        toast.classList.remove("flex");
+      }, 3000);
+    }
+
+    function updateCartUI() {
+      const count = cartItems.reduce((sum, i) => sum + i.quantity, 0);
+      const subtotal = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+      // Badges
+      const navBadge = document.getElementById("navCartBadge");
+      if (navBadge) {
+        navBadge.innerText = count;
+        if (count > 0) navBadge.classList.remove("hidden");
+        else navBadge.classList.add("hidden");
+      }
+
+      const floatingCount = document.getElementById("floatingCartCount");
+      const floatingCountText = document.getElementById("floatingCartCountText");
+      const floatingPrice = document.getElementById("floatingCartPrice");
+
+      if (floatingCount) floatingCount.innerText = count;
+      if (floatingCountText) floatingCountText.innerText = count;
+      if (floatingPrice) floatingPrice.innerText = "$" + subtotal.toLocaleString();
+
+      const drawerBadge = document.getElementById("cartDrawerBadge");
+      if (drawerBadge) drawerBadge.innerText = `${count} ${count === 1 ? "item" : "items"}`;
+
+      const summaryItems = document.getElementById("cartSummaryItemsCount");
+      const summaryEstimate = document.getElementById("cartSummaryEstimate");
+      const summaryTotal = document.getElementById("cartSummaryTotal");
+
+      if (summaryItems) summaryItems.innerText = count + " modules";
+      if (summaryEstimate) summaryEstimate.innerText = "$" + subtotal.toLocaleString();
+      if (summaryTotal) summaryTotal.innerText = "$" + subtotal.toLocaleString();
+
+      const drawerFooter = document.getElementById("cartDrawerFooter");
+      if (drawerFooter) {
+        if (count > 0 && cartStep === "cart") {
+          drawerFooter.classList.remove("hidden");
+        } else {
+          drawerFooter.classList.add("hidden");
+        }
+      }
+
+      renderCartDrawer();
+    }
+
+    function renderCartDrawer() {
+      const container = document.getElementById("cartDrawerContent");
+      if (!container) return;
+
+      const count = cartItems.reduce((sum, i) => sum + i.quantity, 0);
+      const subtotal = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+      if (cartStep === "form") {
+        container.innerHTML = `
+          <form onsubmit="handleCartCheckoutSubmit(event)" class="space-y-4">
+            <div class="rounded-xl border border-cyan-500/20 bg-cyan-950/20 p-3 text-xs text-cyan-300">
+              🚀 Reviewing inquiry for <strong>${count} selected solution(s)</strong> ($${subtotal.toLocaleString()}). Fill in your contact info to submit a quote request.
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-neutral-400 mb-1">
+                Your Full Name *
+              </label>
+              <input id="cartCustomerName" type="text" required placeholder="e.g. Alex Morgan"
+                class="w-full rounded-xl border border-white/15 bg-neutral-900 px-3.5 py-2.5 text-xs text-white focus:border-white focus:outline-none" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-neutral-400 mb-1">
+                Email Address *
+              </label>
+              <input id="cartCustomerEmail" type="email" required placeholder="alex@company.com"
+                class="w-full rounded-xl border border-white/15 bg-neutral-900 px-3.5 py-2.5 text-xs text-white focus:border-white focus:outline-none" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-neutral-400 mb-1">
+                Target Timeline
+              </label>
+              <select id="cartTimeline" class="w-full rounded-xl border border-white/15 bg-neutral-900 px-3.5 py-2.5 text-xs text-white focus:border-white focus:outline-none">
+                <option>Immediate / ASAP (1-2 weeks)</option>
+                <option selected>Standard (2-4 weeks)</option>
+                <option>Medium Term (1-2 months)</option>
+                <option>Flexible / Exploratory</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono uppercase text-neutral-400 mb-1">
+                Project Notes or Custom Requirements
+              </label>
+              <textarea id="cartNotes" rows="3" placeholder="Describe your tech stack, scope, or specific goals..."
+                class="w-full rounded-xl border border-white/15 bg-neutral-900 px-3.5 py-2.5 text-xs text-white focus:border-white focus:outline-none"></textarea>
+            </div>
+
+            <div class="flex gap-2 pt-2">
+              <button type="button" onclick="cartStep='cart'; updateCartUI();"
+                class="flex-1 rounded-xl border border-white/15 bg-white/5 py-2.5 text-xs font-semibold text-white hover:bg-white/10">
+                Back to Cart
+              </button>
+              <button id="cartCheckoutBtn" type="submit"
+                class="flex-1 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 py-2.5 text-xs font-bold text-black shadow-lg shadow-cyan-500/20 hover:scale-[1.02]">
+                Submit Quote ($${subtotal.toLocaleString()})
+              </button>
+            </div>
+          </form>
+        `;
+        return;
+      }
+
+      if (cartStep === "success") {
+        container.innerHTML = `
+          <div class="flex flex-col items-center justify-center text-center py-8 space-y-4">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+              <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h4 class="text-xl font-bold text-white">Order Inquiry Received!</h4>
+            <p class="text-xs text-neutral-300 max-w-xs leading-relaxed">
+              Your solution inquiry has been logged. John will review your architecture specifications and reply within 24 hours.
+            </p>
+            <div class="w-full rounded-xl border border-white/10 bg-neutral-900/60 p-4 text-left font-mono text-[11px] text-neutral-400 space-y-1">
+              <div>Reference ID: <span class="text-white">ORD-${Date.now().toString().slice(-6)}</span></div>
+              <div>Status: <span class="text-emerald-400 font-semibold">Queued for Review</span></div>
+              <div>Expected Response: <span class="text-white">&lt; 24h</span></div>
+            </div>
+            <button onclick="toggleCartDrawer(false)"
+              class="mt-4 rounded-xl bg-white px-6 py-2.5 text-xs font-bold text-black hover:bg-neutral-200 transition-colors">
+              Close &amp; Return to Portfolio
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      // Default "cart" step
+      if (cartItems.length === 0) {
+        container.innerHTML = `
+          <div class="flex h-full flex-col items-center justify-center text-center py-12">
+            <div class="flex h-16 w-16 items-center justify-center rounded-2xl border border-dashed border-white/20 bg-white/5 text-neutral-500">
+              <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h4 class="mt-4 font-semibold text-white">Your Cart is Empty</h4>
+            <p class="mt-2 text-xs text-neutral-400 max-w-xs leading-relaxed">
+              Explore the <strong>Sample Work</strong> section and click "Add to Cart" on any project module or e-commerce showcase item.
+            </p>
+            <button onclick="toggleCartDrawer(false)"
+              class="mt-6 rounded-xl bg-white/10 px-5 py-2.5 text-xs font-semibold text-white hover:bg-white/20 transition-colors">
+              Browse Projects
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="space-y-3">
+          ${cartItems.map(item => `
+            <div class="group flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-neutral-900/60 p-3.5 transition-all hover:border-white/25 hover:bg-neutral-900/90">
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[10px] uppercase text-neutral-300">
+                    ${item.category}
+                  </span>
+                  ${item.badge ? `
+                    <span class="font-mono text-[10px] text-cyan-400 font-semibold">
+                      ${item.badge}
+                    </span>
+                  ` : ''}
+                </div>
+                <h4 class="mt-1 truncate text-xs font-semibold text-white">
+                  ${item.name}
+                </h4>
+                <div class="mt-1 font-mono text-xs text-cyan-400 font-medium">
+                  $${item.price.toLocaleString()}
+                  <span class="text-[10px] text-neutral-500 ml-1">
+                    x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-1.5">
+                <div class="flex items-center rounded-lg border border-white/15 bg-neutral-950 p-0.5">
+                  <button type="button" onclick="updateCartQuantity('${item.id}', -1)"
+                    class="flex h-6 w-6 items-center justify-center rounded text-neutral-400 hover:bg-white/10 hover:text-white transition-colors"
+                    aria-label="Decrease quantity">-</button>
+                  <span class="w-6 text-center font-mono text-xs font-bold text-white">
+                    ${item.quantity}
+                  </span>
+                  <button type="button" onclick="updateCartQuantity('${item.id}', 1)"
+                    class="flex h-6 w-6 items-center justify-center rounded text-neutral-400 hover:bg-white/10 hover:text-white transition-colors"
+                    aria-label="Increase quantity">+</button>
+                </div>
+
+                <button type="button" onclick="removeFromCart('${item.id}')"
+                  class="flex h-7 w-7 items-center justify-center rounded-lg text-neutral-500 hover:bg-red-500/10 hover:text-red-400 transition-colors"
+                  aria-label="Remove item">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          `).join("")}
+
+          <div class="flex justify-end pt-2">
+            <button type="button" onclick="clearCart()"
+              class="text-[11px] font-mono text-neutral-500 hover:text-red-400 underline transition-colors">
+              Clear entire cart
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function showCartCheckoutForm() {
+      cartStep = "form";
+      const drawerFooter = document.getElementById("cartDrawerFooter");
+      if (drawerFooter) drawerFooter.classList.add("hidden");
+      renderCartDrawer();
+    }
+
+    function handleCartCheckoutSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById("cartCheckoutBtn");
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = "Submitting Inquiry...";
+      }
+
+      setTimeout(() => {
+        cartStep = "success";
+        clearCart();
+      }, 700);
+    }
   </script>
 </body>
+
 </html>
